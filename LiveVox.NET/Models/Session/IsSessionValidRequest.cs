@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LiveVox.NET.Models.Base;
+﻿using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models
+namespace LiveVox.NET.Models.Session
 {
     public class IsSessionValidRequest : ILiveVoxRequest
     {

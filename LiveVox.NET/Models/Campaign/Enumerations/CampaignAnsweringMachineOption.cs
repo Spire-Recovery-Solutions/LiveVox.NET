@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace LiveVox.NET.Models.Enumerations
+namespace LiveVox.NET.Models.Campaign.Enumerations
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum AnsweringMachineOption

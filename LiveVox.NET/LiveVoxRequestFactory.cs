@@ -1,5 +1,5 @@
-﻿using LiveVox.NET.Models;
-using LiveVox.NET.Models.Base;
+﻿using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Session;
 
 namespace LiveVox.NET
 {

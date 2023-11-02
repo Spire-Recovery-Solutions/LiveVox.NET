@@ -1,4 +1,4 @@
-﻿namespace LiveVox.NET.Models.Enumerations;
+﻿namespace LiveVox.NET.Models.Base.Enumerations;
 
 public enum LiveVoxEnvironment
 {

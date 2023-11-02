@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using LiveVox.NET.Models;
 using LiveVox.NET.Models.Base;
-using LiveVox.NET.Models.Enumerations;
+using LiveVox.NET.Models.Base.Enumerations;
 using RestSharp;
 
 namespace LiveVox.NET

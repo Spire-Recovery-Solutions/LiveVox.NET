@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LiveVox.NET.Models.Base;
+﻿using LiveVox.NET.Models.Base;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Session
 {
-    public class LoginRequest : ILiveVoxRequest
+    public class SessionLoginRequest : ILiveVoxRequest
     {
-        public string? Category { get; set; }
-        public string? Resource { get; set; }
+        public string? Category { get; set; } = "session";
+        public string? Resource { get; set; } = "login";
         public Method RequestType { get; set; }
 
         // Properties to hold the request data
@@ -37,28 +32,5 @@ namespace LiveVox.NET.Models.Session
         /// If not included in the request it defaults to 'false' meaning that the login request is for a User.
         /// </summary>
         public bool IsAgent { get; set; } = false;
-    }
-
-    public class LoginResponse : ILiveVoxResponse
-    {
-        /// <summary>
-        /// LiveVox Session ID to be used in subsequent API requests.
-        /// </summary>
-        public string SessionId { get; set; }
-
-        /// <summary>
-        /// The ID of the Client corresponding to the clientName provided in the login request.
-        /// </summary>
-        public int ClientId { get; set; }
-
-        /// <summary>
-        /// The internal ID of the LiveVox User or Agent corresponding to the userName provided in the login request.
-        /// </summary>
-        public int UserId { get; set; }
-
-        /// <summary>
-        /// The number of days until the User or Agents' password expires. This field is optional.
-        /// </summary>
-        public int? DaysUntilPasswordExpires { get; set; }
     }
 }
