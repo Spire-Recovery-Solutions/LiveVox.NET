@@ -25,7 +25,7 @@ public class Phone
     /// The LiveVox system blocks dialing to this phone-account combination for the entire day or permanently
     /// </summary>
     [JsonPropertyName("phoneBlock")]
-    public PhoneBlock PhoneBlock { get; set; }
+    public DialBlockOption PhoneBlock { get; set; }
 
     /// <summary>
     /// Used to indicate whether the contact has given consent to SMS their number.

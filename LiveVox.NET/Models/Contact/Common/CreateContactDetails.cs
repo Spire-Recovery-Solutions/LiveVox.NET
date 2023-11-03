@@ -25,7 +25,7 @@ public class CreateContactDetails
     /// </summary>
     [JsonPropertyName("accountBlock")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public AccountBlock? AccountBlock { get; set; }
+    public DialBlockOption? AccountBlock { get; set; }
 
     /// <summary>
     /// Information pertaining to the contact owner.

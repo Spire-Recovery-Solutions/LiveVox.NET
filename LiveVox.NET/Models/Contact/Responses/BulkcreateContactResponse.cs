@@ -8,7 +8,7 @@ using LiveVox.NET.Models.Base;
 
 namespace LiveVox.NET.Models.Contact.Responses
 {
-    public class BulkcreateContactResponse : ILiveVoxResponse
+    public class BulkCreateContactResponse : ILiveVoxResponse
     {
         /// <summary>
         /// On successful completion, returns a message with the number of contacts actually created.
