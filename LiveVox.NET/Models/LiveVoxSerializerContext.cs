@@ -13,6 +13,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AccountBlock))]
     [JsonSerializable(typeof(PhoneBlock))]
     [JsonSerializable(typeof(CreateContactRequest))]
+    [JsonSerializable(typeof(CreateContactResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
