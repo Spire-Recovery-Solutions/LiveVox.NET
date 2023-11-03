@@ -79,6 +79,6 @@ namespace LiveVox.NET.Models.Campaign.Requests
         /// Gets or sets an array of Campaign Type IDs to include in the query.
         /// </summary>
         [JsonPropertyName("type")]
-        public List<CampaignType> Type { get; set; }
+        public ICollection<CampaignType> Type { get; set; }
     }
 }

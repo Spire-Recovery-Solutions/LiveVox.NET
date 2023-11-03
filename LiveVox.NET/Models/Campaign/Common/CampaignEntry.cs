@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.Enumerations;
 
 namespace LiveVox.NET.Models.Campaign.Common
@@ -46,6 +47,7 @@ namespace LiveVox.NET.Models.Campaign.Common
         /// Gets or sets the timestamp (Unix timestamp format) describing when the campaign was uploaded.
         /// </summary>
         [JsonPropertyName("uploadDate")]
-        public DateTime UploadDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset UploadDate { get; set; }
     }
 }
