@@ -19,7 +19,7 @@ namespace LiveVox.NET.Models.Campaign.Requests
         
         public Task<RestRequest> BuildRequestAsync()
         {
-            var request = new RestRequest(Resource.Replace("{id}", CampaignId.ToString()), RequestType);
+            var request = new RestRequest(Category + "/" + Resource.Replace("{id}", CampaignId.ToString()), RequestType);
             // Serialize the request using the source-generated context for the specific type of 'request'
             var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 
