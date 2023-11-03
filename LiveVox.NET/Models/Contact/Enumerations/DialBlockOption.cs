@@ -11,7 +11,7 @@ namespace LiveVox.NET.Models.Contact.Enumerations
     /// Enum representing different account block options.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum AccountBlock
+    public enum DialBlockOption
     {
         /// <summary>
         /// Sets Daily Do Not Dial (DND).

@@ -9,6 +9,6 @@ namespace LiveVox.NET.Models.Contact.Responses
         /// The ID of the newly created contact.
         /// </summary>
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }

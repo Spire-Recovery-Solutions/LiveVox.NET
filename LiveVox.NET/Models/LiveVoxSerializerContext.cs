@@ -12,12 +12,11 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AnsweringMachineOption))]
     [JsonSerializable(typeof(SessionLoginRequest))]
     [JsonSerializable(typeof(SessionLoginResponse))]
-    [JsonSerializable(typeof(AccountBlock))]
-    [JsonSerializable(typeof(PhoneBlock))]
+    [JsonSerializable(typeof(DialBlockOption))]
     [JsonSerializable(typeof(CreateContactRequest))]
     [JsonSerializable(typeof(CreateContactResponse))]
     [JsonSerializable(typeof(BulkCreateContactRequest))]
-    [JsonSerializable(typeof(BulkcreateContactResponse))]
+    [JsonSerializable(typeof(BulkCreateContactResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
