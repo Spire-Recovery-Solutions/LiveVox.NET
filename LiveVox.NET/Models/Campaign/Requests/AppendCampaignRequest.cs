@@ -28,13 +28,17 @@ namespace LiveVox.NET.Models.Campaign.AppendCampaign
         /// <summary>
         /// Gets or sets the ID of the campaign to append records to.
         /// </summary>
+        [JsonPropertyName("id")]
         public int CampaignId { get; set; }
-
-        public ICollection<CampaignTransaction> Records { get; set; }
+        /// <summary>
+        /// Gets or sets the ID of the campaign to append records to.
+        /// </summary>
+        [JsonPropertyName("records")]
+        public ICollection<CampaignTransaction> CampaignRecords { get; set; }
 
         public AppendCampaignRequest()
         {
-            Records = new List<CampaignTransaction>();
+            CampaignRecords = new List<CampaignTransaction>();
         }
     }
 }
