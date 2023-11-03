@@ -36,7 +36,7 @@ namespace LiveVox.NET
         public async Task<T?> SendRequest<T>(ILiveVoxRequest request) where T : class, ILiveVoxResponse
         {
             // Create a RestRequest with the specified endpoint and method
-            var restRequest = new RestRequest(request.Category + "/" + request.Resource, request.RequestType);
+            var restRequest = await request.BuildRequestAsync();
 
             //TODO: Auth
             /*
@@ -54,11 +54,6 @@ namespace LiveVox.NET
 
             restRequest.AddHeader("LV-Session", _sessionId);
 
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            string requestBodyJson = JsonSerializer.Serialize(request, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            restRequest.AddJsonBody(requestBodyJson);
 
             // Execute the request asynchronously
             var response = await _restClient.ExecuteAsync(restRequest);

@@ -1,4 +1,5 @@
-﻿using LiveVox.NET.Models.Base;
+﻿using System.Text.Json;
+using LiveVox.NET.Models.Base;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Session
@@ -7,7 +8,18 @@ namespace LiveVox.NET.Models.Session
     {
         public string? Category { get; set; } = "session";
         public string? Resource { get; set; } = "login";
-        public Method RequestType { get; set; }
+        public Method RequestType { get; set; } = Method.Post;
+
+        public Task<RestRequest> BuildRequestAsync()
+        {
+            var request = new RestRequest(Category + "/" + Resource, RequestType);
+            // Serialize the request using the source-generated context for the specific type of 'request'
+            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
+
+            // Add the serialized request body to the RestRequest
+            request.AddJsonBody(requestBodyJson);
+            return Task.FromResult(request);
+        }
 
         // Properties to hold the request data
         /// <summary>

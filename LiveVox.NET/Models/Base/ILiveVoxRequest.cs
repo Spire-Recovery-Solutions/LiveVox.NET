@@ -7,4 +7,6 @@ public interface ILiveVoxRequest
     string? Category { get; set; }
     string? Resource { get; set; }
     Method RequestType { get; set; }
+
+    Task<RestRequest> BuildRequestAsync();
 }
