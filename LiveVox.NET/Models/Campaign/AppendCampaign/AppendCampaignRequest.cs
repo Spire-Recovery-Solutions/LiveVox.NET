@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Campaign
+namespace LiveVox.NET.Models.Campaign.AppendCampaign
 {
     public class AppendCampaignRequest : ILiveVoxRequest
     {
