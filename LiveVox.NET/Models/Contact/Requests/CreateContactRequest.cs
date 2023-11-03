@@ -1,14 +1,10 @@
-﻿using LiveVox.NET.Models.Base;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
-using System.Threading.Tasks;
+using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Contact.Common;
+using RestSharp;
 
-namespace LiveVox.NET.Models.Contact
+namespace LiveVox.NET.Models.Contact.Requests
 {
     public class CreateContactRequest : ILiveVoxRequest
     {

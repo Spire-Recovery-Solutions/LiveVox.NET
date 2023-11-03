@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Contact.Enumerations;
 
-namespace LiveVox.NET.Models.Contact;
+namespace LiveVox.NET.Models.Contact.Common;
 
 public class Phone
 {

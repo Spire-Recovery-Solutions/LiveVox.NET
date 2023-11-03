@@ -2,6 +2,8 @@
 using LiveVox.NET.Models.Campaign.Enumerations;
 using LiveVox.NET.Models.Contact;
 using LiveVox.NET.Models.Contact.Enumerations;
+using LiveVox.NET.Models.Contact.Requests;
+using LiveVox.NET.Models.Contact.Responses;
 using LiveVox.NET.Models.Session;
 
 namespace LiveVox.NET.Models
