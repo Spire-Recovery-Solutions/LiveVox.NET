@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text.Json;
 using LiveVox.NET.Models;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Base.Enumerations;
@@ -8,13 +9,16 @@ namespace LiveVox.NET
 {
     public class LiveVoxClient
     {
+        private readonly string _accessToken;
         private readonly RestClient _restClient;
 
-        private string _sessionId = string.Empty;
+        private readonly string _sessionId = string.Empty;
+        private DateTimeOffset _lastSessionUseTimestamp = DateTimeOffset.MinValue;
 
-        public LiveVoxClient(LiveVoxEnvironment environment, string accessToken, bool useSandbox = false, int maxTimeout = 20000)
+        public LiveVoxClient(LiveVoxEnvironment environment, string accessToken, int maxTimeout = 20000)
         {
-           // Use RestSharp to make the authenticated request
+            _accessToken = accessToken;
+            // Use RestSharp to make the authenticated request
             _restClient = new RestClient(
                 new RestClientOptions
                 {
@@ -35,6 +39,18 @@ namespace LiveVox.NET
 
         public async Task<T?> SendRequest<T>(ILiveVoxRequest request) where T : class, ILiveVoxResponse
         {
+            //Session IDs will expire if there is no activity for 2 hours
+            if (DateTimeOffset.UtcNow > _lastSessionUseTimestamp.AddHours(-2))
+            {
+                var sessionValidRequest = await LiveVoxRequestFactory.Session.IsSessionValid(_sessionId).BuildRequestAsync();
+                sessionValidRequest.AddHeader("LV-Access", _accessToken);
+                var sessionValidResponse = await _restClient.ExecuteAsync(sessionValidRequest);
+                if (sessionValidResponse.StatusCode != HttpStatusCode.NoContent) //Session Invalid
+                {
+                    //TODO: Call Login
+                }
+            }
+
             // Create a RestRequest with the specified endpoint and method
             var restRequest = await request.BuildRequestAsync();
 
@@ -58,7 +74,10 @@ namespace LiveVox.NET
             // Execute the request asynchronously
             var response = await _restClient.ExecuteAsync(restRequest);
 
+            //TODO: Build out specific error for SDK and handle API Error Responses
+            if (!response.IsSuccessStatusCode) return null;
 
+            _lastSessionUseTimestamp = DateTimeOffset.UtcNow;
             var result = JsonSerializer.Deserialize<T>(response.Content, LiveVoxSerializerContext.Default.Options);
             return result;
 

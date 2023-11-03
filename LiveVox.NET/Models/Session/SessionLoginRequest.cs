@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
@@ -21,28 +23,34 @@ namespace LiveVox.NET.Models.Session
             return Task.FromResult(request);
         }
 
-        // Properties to hold the request data
         /// <summary>
-        /// Name of LiveVox Client on whose behalf the session is being created.
-        /// This is not the "Display Name" of the Client, but rather the "Client Code" as it appears in the Client Editor screen in the LiveVox Portal GUI.
+        /// Name of LiveVox Client on whose behalf the session is being created. 
+        /// This is not the "Display Name" of the Client, but rather the "Client Code" 
+        /// as it appears in the Client Editor screen in the LiveVox Portal GUI.
         /// </summary>
+        [JsonPropertyName("clientName")]
+        [Required]
         public string ClientName { get; set; }
 
         /// <summary>
         /// Name of LiveVox user or Agent on whose behalf the session is being created.
-        /// An Agents 'userName' is case insensitive while a Users 'userName' is case sensitive.
         /// </summary>
+        [JsonPropertyName("userName")]
+        [Required]
         public string UserName { get; set; }
 
         /// <summary>
         /// Password associated with the Username.
         /// </summary>
+        [JsonPropertyName("password")]
+        [Required]
         public string Password { get; set; }
 
         /// <summary>
         /// If set to true the password update is for an Agent.
         /// If not included in the request it defaults to 'false' meaning that the login request is for a User.
         /// </summary>
-        public bool IsAgent { get; set; } = false;
+        [JsonPropertyName("agent")]
+        public bool Agent { get; set; } = false;
     }
 }
