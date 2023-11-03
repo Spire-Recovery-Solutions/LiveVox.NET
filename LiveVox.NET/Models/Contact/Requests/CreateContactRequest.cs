@@ -11,7 +11,7 @@ namespace LiveVox.NET.Models.Contact.Requests
     {
         public string? Category { get; set; } = "contact";
         public string? Resource { get; set; } = "contacts";
-        public Method RequestType { get; set; }
+        public Method RequestType { get; set; } = Method.Post;
 
         public Task<RestRequest> BuildRequestAsync()
         {
