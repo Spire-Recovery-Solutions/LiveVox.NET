@@ -28,7 +28,6 @@ namespace LiveVox.NET.Models.Campaign.AppendCampaign
         /// <summary>
         /// Gets or sets the ID of the campaign to append records to.
         /// </summary>
-        [JsonPropertyName("id")]
         public int CampaignId { get; set; }
         /// <summary>
         /// Gets or sets the ID of the campaign to append records to.
