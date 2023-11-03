@@ -24,6 +24,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(SearchCampaignResponse))]
     [JsonSerializable(typeof(SearchFinishedCallRequest))]
     [JsonSerializable(typeof(SearchFinishedCallResponse))]
+    [JsonSerializable(typeof(GetCampaignListInfoRequest))]
+    [JsonSerializable(typeof(GetCampaignListInfoResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

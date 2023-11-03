@@ -13,7 +13,6 @@ namespace LiveVox.NET.Models.Campaign.CreateCampaign
         /// <summary>
         /// The ID of the newly created campaign.
         /// </summary>
-        [JsonPropertyName("id")]
         public int Id { get; set; }
     }
 }
