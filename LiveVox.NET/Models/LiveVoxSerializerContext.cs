@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.AppendCampaign;
 using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.CreateCampaign;
@@ -17,9 +18,9 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CreateCampaignRequest))]
     [JsonSerializable(typeof(CreateCampaignResponse))]
     [JsonSerializable(typeof(DeactivateCampaignRequest))]
+    [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
     }
-
 }

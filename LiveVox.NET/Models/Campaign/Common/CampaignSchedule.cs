@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveVox.NET.Converter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,15 @@ namespace LiveVox.NET.Models.Campaign.Common
         /// Gets or sets the start date and time of the campaign.
         /// </summary>
         [JsonPropertyName("start")]
-        public DateTime Start { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset Start { get; set; }
 
         /// <summary>
         /// Gets or sets the end date and time of the campaign.
         /// </summary>
         [JsonPropertyName("end")]
-        public DateTime End { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset End { get; set; }
 
         /// <summary>
         /// Gets or sets a boolean value indicating if the campaign should run on the following day.
