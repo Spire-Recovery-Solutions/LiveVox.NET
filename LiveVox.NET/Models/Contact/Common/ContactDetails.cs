@@ -4,7 +4,7 @@ using LiveVox.NET.Models.Contact.Enumerations;
 
 namespace LiveVox.NET.Models.Contact.Common;
 
-public class CreateContactDetails
+public class ContactDetails
 {
     /// <summary>
     /// Identifier of the account, normally coming from a Client's system of record.

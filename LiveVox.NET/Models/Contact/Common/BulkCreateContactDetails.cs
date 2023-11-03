@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Contact.Common
 {
-    public class BulkCreateContactDetails : CreateContactDetails
+    public class BulkCreateContactDetails : ContactDetails
     {
         /// <summary>
         /// Agent ID.
