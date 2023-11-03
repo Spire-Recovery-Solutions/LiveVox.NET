@@ -30,7 +30,7 @@ namespace LiveVox.NET.Models.Contact.Requests
 
         // Properties to hold the request data
         /// <summary>
-        /// Details of a Contact to create.
+        /// Collection of Contact Details to create.
         /// </summary>
         [Required]
         [JsonPropertyName("createContactDetails")]
