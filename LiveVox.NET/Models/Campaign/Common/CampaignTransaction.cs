@@ -1,42 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
-using LiveVox.NET.Models.Base;
-using RestSharp;
+using System.Threading.Tasks;
 
-namespace LiveVox.NET.Models.Campaign.AppendCampaign
+namespace LiveVox.NET.Models.Campaign.Common
 {
-    public class AppendCampaignRequest : ILiveVoxRequest
-    {
-        public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns/{id}/transactions";
-        public Method RequestType { get; set; }
-
-        public Task<RestRequest> BuildRequestAsync()
-        {
-            var request = new RestRequest(Resource.Replace("{id}", CampaignId.ToString()), RequestType);
-
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            request.AddJsonBody(requestBodyJson);
-            return Task.FromResult(request);
-        }
-
-        /// <summary>
-        /// Gets or sets the ID of the campaign to append records to.
-        /// </summary>
-        public int CampaignId { get; set; }
-
-        public List<CampaignTransaction> Records { get; set; }
-
-        public AppendCampaignRequest()
-        {
-            Records = new List<CampaignTransaction>();
-        }
-    }
-
     /// <summary>
     /// Represents a campaign transaction.
     /// </summary>
