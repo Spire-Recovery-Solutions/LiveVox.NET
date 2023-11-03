@@ -5,15 +5,16 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Contact.Common;
 
 namespace LiveVox.NET.Models.Contact.Responses
 {
-    public class BulkCreateContactResponse : ILiveVoxResponse
+    public class ReadContactResponse : ILiveVoxResponse
     {
         /// <summary>
-        /// On successful completion, returns a message with the number of contacts actually created.
+        /// Details of the contact
         /// </summary>
-        [JsonPropertyName("message")]
-        public string Message { get; set; }
+        [JsonPropertyName("readContactDetails")]
+        public ContactDetailEntry ContactDetails { get; set; }
     }
 }

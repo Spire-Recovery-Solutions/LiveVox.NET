@@ -17,7 +17,12 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CreateContactRequest))]
     [JsonSerializable(typeof(CreateContactResponse))]
     [JsonSerializable(typeof(BulkCreateContactRequest))]
-    [JsonSerializable(typeof(BulkcreateContactResponse))]
+    [JsonSerializable(typeof(BulkCreateOrUpdateContactResponse))]
+    [JsonSerializable(typeof(SearchContactsRequest))]
+    [JsonSerializable(typeof(ListContactsResponse))]
+    [JsonSerializable(typeof(ReadContactResponse))]
+    [JsonSerializable(typeof(UpdateContactRequest))]
+    [JsonSerializable(typeof(BulkUpdateContactRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
