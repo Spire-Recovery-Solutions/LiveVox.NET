@@ -1,18 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Contact.Requests
 {
-    public class CreateContactRequest : ILiveVoxRequest
+    public class BulkCreateContactRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "contact";
-        public string? Resource { get; set; } = "contacts";
+        public string? Resource { get; set; } = "contacts/bulk";
         public Method RequestType { get; set; }
-
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
@@ -30,7 +34,6 @@ namespace LiveVox.NET.Models.Contact.Requests
         /// </summary>
         [Required]
         [JsonPropertyName("createContactDetails")]
-        public CreateContactDetails CreateContactDetails { get; set; }
+        public ICollection<BulkCreateContactDetails>  CreateContactDetails { get; set; }
     }
-
 }
