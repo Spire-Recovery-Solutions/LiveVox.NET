@@ -15,7 +15,9 @@ namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class UpdateCampaignRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "campaign";
+        [JsonIgnore]
         public string? Resource { get; set; } = "campaigns/{id}";
         public Method RequestType { get; set; } = Method.Put;
 

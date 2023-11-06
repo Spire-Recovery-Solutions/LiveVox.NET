@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
@@ -11,7 +12,9 @@ namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class GetCampaignListInfoRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "campaign";
+        [JsonIgnore]
         public string? Resource { get; set; } = "/campaigns/info";
         public Method RequestType { get; set; } = Method.Get;
         

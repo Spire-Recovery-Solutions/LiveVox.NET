@@ -27,7 +27,7 @@ namespace LiveVox.NET.Models.Campaign.Common
         /// </summary>
         [JsonPropertyName("dateOfBirth")]
         [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
-        public DateTimeOffset? DateOfBirth { get; set; }
+        public DateTimeOffset DateOfBirth { get; set; }
 
         /// <summary>
         /// Gets or sets the email address of the consumer.

@@ -6,13 +6,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class ListCampaignTransactionsRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "campaign";
+        [JsonIgnore]
         public string? Resource { get; set; } = "campaigns/{id}/transactionList";
         public Method RequestType { get; set; } = Method.Get;
         

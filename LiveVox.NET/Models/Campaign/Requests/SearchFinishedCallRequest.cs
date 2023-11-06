@@ -14,7 +14,9 @@ namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class SearchFinishedCallRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "campaign";
+        [JsonIgnore]
         public string? Resource { get; set; } = "campaigns/{campaign}/finishedCalls";
         public Method RequestType { get; set; } = Method.Post;
 

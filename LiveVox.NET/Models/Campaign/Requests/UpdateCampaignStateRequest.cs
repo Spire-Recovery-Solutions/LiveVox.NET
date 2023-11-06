@@ -14,8 +14,9 @@ namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class UpdateCampaignStateRequest : ILiveVoxRequest
     {
-
+        [JsonIgnore]
         public string Category { get; set; } = "campaign";
+        [JsonIgnore]
         public string Resource { get; set; } = "campaigns/{id}/state";
         public Method RequestType { get; set; } = Method.Put;
         public Task<RestRequest> BuildRequestAsync()
@@ -41,6 +42,7 @@ namespace LiveVox.NET.Models.Campaign.Requests
         /// Desired state of the campaign. Possible values are STOP, PLAY, PAUSE, or BUILD.
         /// </summary>
         [Required]
+        [JsonPropertyName("state")]
         public CampaignState State { get; set; }
     }
 }
