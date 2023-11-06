@@ -17,6 +17,7 @@ namespace LiveVox.NET.Models.Campaign.Requests
         public string? Category { get; set; } = "campaign";
         [JsonIgnore]
         public string? Resource { get; set; } = "campaigns/{id}/deactivate";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
         
         public Task<RestRequest> BuildRequestAsync()
