@@ -50,6 +50,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ContactField))]
     [JsonSerializable(typeof(SortField))]
     [JsonSerializable(typeof(SortOrder))]
+    [JsonSerializable(typeof(ListAccountsResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
