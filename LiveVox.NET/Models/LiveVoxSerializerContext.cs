@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.Enumerations;
 using LiveVox.NET.Models.Session;
 
@@ -8,6 +9,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AnsweringMachineOption))]
     [JsonSerializable(typeof(SessionLoginRequest))]
     [JsonSerializable(typeof(SessionLoginResponse))]
+    [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
