@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Campaign.Common;
 
 namespace LiveVox.NET.Models.Campaign.Responses
 {
-    public class ListCampaignTransactionsResponse
+    public class ListCampaignTransactionsResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets a URI for the next page of entries. If not present or blank, there are no more pages.
