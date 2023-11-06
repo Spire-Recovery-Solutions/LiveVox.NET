@@ -9,10 +9,11 @@ using LiveVox.NET.Models.Campaign.Common;
 using RestSharp;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using LiveVox.NET.Models.Base;
 
 namespace LiveVox.NET.Models.Campaign.Requests
 {
-    public class UpdateCampaignRequest
+    public class UpdateCampaignRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "campaign";
         public string? Resource { get; set; } = "campaigns/{id}";
