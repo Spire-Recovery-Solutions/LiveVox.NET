@@ -14,12 +14,14 @@ namespace LiveVox.NET.Models.Campaign.Responses
         /// <summary>
         /// Gets or sets the number of campaigns currently loaded for this client.
         /// </summary>
+        [JsonPropertyName("size")]
         public int Size { get; set; }
 
         /// <summary>
         /// Gets or sets the most recently modified campaign's timestamp (Unix timestamp format).
         /// </summary>
         [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        [JsonPropertyName("lastModified")]
         public DateTimeOffset LastModified { get; set; }
     }
 }

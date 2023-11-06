@@ -15,11 +15,13 @@ namespace LiveVox.NET.Models.Campaign.Responses
         /// <summary>
         /// Gets or sets a URI for the next page of entries. If not present or blank, there are no more pages.
         /// </summary>
+        [JsonPropertyName("next")]
         public Uri Next { get; set; }
 
         /// <summary>
         /// Gets or sets a container for a page of Campaign entries.
         /// </summary>
+        [JsonPropertyName("campaign")]
         public ICollection<CampaignEntry> Campaign { get; set; }
     }
 }
