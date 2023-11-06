@@ -6,6 +6,7 @@ using LiveVox.NET.Models.Contact.Requests.ContactGroups;
 using LiveVox.NET.Models.Contact.Requests.Contacts;
 using LiveVox.NET.Models.Contact.Responses.Contact_Groups;
 using LiveVox.NET.Models.Contact.Responses.ContactGroups;
+using LiveVox.NET.Models.Contact.Responses.ContactNotes;
 using LiveVox.NET.Models.Contact.Responses.Contacts;
 using LiveVox.NET.Models.Session;
 
@@ -30,6 +31,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ListContactGroupResponse))]
     [JsonSerializable(typeof(ReadContactGroupResponse))]
     [JsonSerializable(typeof(UpdateContactGroupRequest))]
+    [JsonSerializable(typeof(ReadContactNoteResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
