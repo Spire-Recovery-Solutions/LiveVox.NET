@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace LiveVox.NET.Models.Contact.Common;
+namespace LiveVox.NET.Models.Contact.Common.Contacts;
 
 public class Person
 {

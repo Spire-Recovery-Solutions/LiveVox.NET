@@ -10,13 +10,13 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.Contact_Groups
 {
-    public class BulkUpdateContactRequest : ILiveVoxRequest
+    public class CreateContactGroupRequest : ILiveVoxRequest
     {
-        public string? Category { get; set; } = "";
-        public string? Resource { get; set; } = "";
-        public Method RequestType { get; set; } = Method.Put;
+        public string? Category { get; set; } = "contact";
+        public string? Resource { get; set; } = "contactGroups";
+        public Method RequestType { get; set; } = Method.Post;
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
@@ -30,10 +30,10 @@ namespace LiveVox.NET.Models.Contact.Requests
 
         // Properties to hold the request data
         /// <summary>
-        /// Collection of Contact Details to update.
+        /// The name of the contact group.
         /// </summary>
         [Required]
-        [JsonPropertyName("updateContactDetails")]
-        public ICollection<BulkUpdateContactDetails>  UpdateContactDetails { get; set; }
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
     }
 }

@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.ContactGroups
 {
-    public class ReadContactRequest : ILiveVoxRequest
+    public class ReadContactGroupRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "contact";
-        public string? Resource { get; set; } = "contacts";
+        public string? Resource { get; set; } = "contactGroups";
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
-            request.AddQueryParameter("acct", Account);
+            request.AddQueryParameter("id", Id);
             return Task.FromResult(request);
         }
 
-        public ReadContactRequest(string account)
+        public ReadContactGroupRequest(long id)
         {
-            Account = account;
+            Id = id;
         }
 
         /// <summary>
-        /// The Account of the contact to read.
+        /// The ID of the contact group to read. 
         /// </summary>
-        public string Account { get; set; }
+        public long Id { get; set; }
     }
 }

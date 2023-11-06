@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common;
+using LiveVox.NET.Models.Contact.Common.Contacts;
 
-namespace LiveVox.NET.Models.Contact.Responses
+namespace LiveVox.NET.Models.Contact.Responses.Contacts
 {
     public class ReadContactResponse : ILiveVoxResponse
     {
