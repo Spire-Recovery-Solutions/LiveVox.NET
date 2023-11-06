@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LiveVox.NET.Models.Base;
+﻿using LiveVox.NET.Models.Base;
 using RestSharp;
-using static LiveVox.NET.LiveVoxRequestFactory;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class DeleteContactRequest : ILiveVoxRequest
     {

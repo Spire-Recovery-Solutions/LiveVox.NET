@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common;
+using LiveVox.NET.Models.Contact.Common.Contacts;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class SearchContactsRequest : ILiveVoxRequest
     {

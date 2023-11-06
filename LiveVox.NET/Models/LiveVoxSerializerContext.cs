@@ -1,10 +1,13 @@
 ﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.Enumerations;
-using LiveVox.NET.Models.Contact;
 using LiveVox.NET.Models.Contact.Enumerations;
-using LiveVox.NET.Models.Contact.Requests;
-using LiveVox.NET.Models.Contact.Responses;
+using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
+using LiveVox.NET.Models.Contact.Requests.ContactGroups;
+using LiveVox.NET.Models.Contact.Requests.Contacts;
+using LiveVox.NET.Models.Contact.Responses.Contact_Groups;
+using LiveVox.NET.Models.Contact.Responses.ContactGroups;
+using LiveVox.NET.Models.Contact.Responses.Contacts;
 using LiveVox.NET.Models.Session;
 
 namespace LiveVox.NET.Models
@@ -23,6 +26,11 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadContactResponse))]
     [JsonSerializable(typeof(UpdateContactRequest))]
     [JsonSerializable(typeof(BulkUpdateContactRequest))]
+    [JsonSerializable(typeof(CreateContactGroupRequest))]
+    [JsonSerializable(typeof(CreateContactGroupResponse))]
+    [JsonSerializable(typeof(ListContactGroupResponse))]
+    [JsonSerializable(typeof(ReadContactGroupResponse))]
+    [JsonSerializable(typeof(UpdateContactGroupRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

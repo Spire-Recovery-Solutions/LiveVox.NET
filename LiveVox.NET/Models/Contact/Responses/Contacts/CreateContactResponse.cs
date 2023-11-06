@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Contact.Responses
+namespace LiveVox.NET.Models.Contact.Responses.Contacts
 {
     public class CreateContactResponse : ILiveVoxResponse
     {

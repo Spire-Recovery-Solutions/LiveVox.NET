@@ -3,9 +3,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common;
+using LiveVox.NET.Models.Contact.Common.Contacts;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class CreateContactRequest : ILiveVoxRequest
     {

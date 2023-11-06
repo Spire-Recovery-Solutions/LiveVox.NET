@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Contact.Requests
+namespace LiveVox.NET.Models.Contact.Requests.Contact_Groups
 {
-    public class ListContactsRequest : ILiveVoxRequest
+    public class ListContactGroupRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "contact";
-        public string? Resource { get; set; } = "contacts";
+        public string? Resource { get; set; } = "contactGroups";
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()
         {
@@ -23,7 +22,7 @@ namespace LiveVox.NET.Models.Contact.Requests
 
             return Task.FromResult(request);
         }
-        public ListContactsRequest(int count, int offset)
+        public ListContactGroupRequest(int count, int offset)
         {
             Count = count;
             Offset = offset;
