@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common.ContactNotes;
 
@@ -29,13 +30,15 @@ namespace LiveVox.NET.Models.Contact.Responses.ContactNotes
         /// Date and time the note was created.
         /// </summary>
         [JsonPropertyName("createDate")]
-        public DateTime CreateDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset CreateDate { get; set; }
 
         /// <summary>
         /// Date and time the note was last modified.
         /// </summary>
         [Required]
         [JsonPropertyName("modifiedDate")]
-        public DateTime ModifiedDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ModifiedDate { get; set; }
     }
 }

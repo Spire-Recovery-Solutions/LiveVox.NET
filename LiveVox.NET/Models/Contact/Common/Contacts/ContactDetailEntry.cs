@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Contact.Common.Contacts
 {
@@ -20,24 +21,28 @@ namespace LiveVox.NET.Models.Contact.Common.Contacts
         /// Date the contact was created.
         /// </summary>
         [JsonPropertyName("createDate")]
-        public DateTimeOffset? CreateDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset CreateDate { get; set; }
 
         /// <summary>
         /// The date/time when the contact was initially loaded into the LiveVox platform.
         /// </summary>
         [JsonPropertyName("initialLoad")]
-        public DateTimeOffset? InitialLoad { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset InitialLoad { get; set; }
 
         /// <summary>
         /// The date/time when the contact was last loaded into the LiveVox platform.
         /// </summary>
         [JsonPropertyName("lastLoad")]
-        public DateTimeOffset? LastLoad { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset LastLoad { get; set; }
             
         /// <summary>
         /// Date the contact was last changed.
         /// </summary>
         [JsonPropertyName("modifyDate")]
-        public DateTimeOffset? ModifyDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ModifyDate { get; set; }
     }
 }

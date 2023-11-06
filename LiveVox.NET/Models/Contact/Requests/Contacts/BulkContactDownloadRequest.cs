@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common.Contacts;
 using RestSharp;
@@ -37,14 +38,16 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
         /// It could take the format "CCYY-MM-DD" like "2020-01-01" or Unix timestamp like 1577858400000 (in milliseconds).
         /// </summary>
         [JsonPropertyName("startDate")]
-        public DateTime StartDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset StartDate { get; set; }
 
         /// <summary>
         /// The start date of the date range to return contact records which have a ‘modifyDate’ as same or after this date.
         /// It could take the format "CCYY-MM-DD" like "2020-01-01" or Unix timestamp like 1577858400000 (in milliseconds).
         /// </summary>
         [JsonPropertyName("endDate")]
-        public DateTime EndDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset EndDate { get; set; }
 
         /// <summary>
         /// The start date of the date range to return contact records which have a ‘modifyDate’ as same or after this date.

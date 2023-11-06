@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Contact.Common.Contacts;
 
@@ -31,7 +32,8 @@ public class Person
     /// The dateOfBirth field accepts both formats (DateTime and String).
     /// </summary>
     [JsonPropertyName("dateOfBirth")]
-    public DateTime? DateOfBirth { get; set; }
+    [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+    public DateTimeOffset DateOfBirth { get; set; }
     
     /// <summary>
     /// The social security number of the contact.

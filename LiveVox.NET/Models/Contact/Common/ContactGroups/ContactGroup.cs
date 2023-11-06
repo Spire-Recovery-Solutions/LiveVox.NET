@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Contact.Common.ContactGroups
 {
@@ -37,12 +38,14 @@ namespace LiveVox.NET.Models.Contact.Common.ContactGroups
         /// Date when the contact group was created.
         /// </summary>
         [JsonPropertyName("createdAt")]
-        public DateTime? CreatedAt { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Date when the contact group was last modified.
         /// </summary>
         [JsonPropertyName("modifiedAt")]
-        public DateTime? ModifiedAt { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ModifiedAt { get; set; }
     }
 }

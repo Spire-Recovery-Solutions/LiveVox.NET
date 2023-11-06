@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Contact.Enumerations;
 
 namespace LiveVox.NET.Models.Contact.Common.Contacts;
@@ -105,7 +106,8 @@ public class ContactDetails
     /// Date when the account balance is due.
     /// </summary>
     [JsonPropertyName("dueDate")]
-    public DateTime? DueDate { get; set; }
+    [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+    public DateTimeOffset DueDate { get; set; }
 
     /// <summary>
     /// Group ID to which the contact belongs.
