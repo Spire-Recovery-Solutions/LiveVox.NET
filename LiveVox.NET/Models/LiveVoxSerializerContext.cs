@@ -12,6 +12,9 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AnsweringMachineOption))]
     [JsonSerializable(typeof(CampaignType))]
     [JsonSerializable(typeof(CampaignStatus))]
+    [JsonSerializable(typeof(CampaignState))]
+    [JsonSerializable(typeof(ScrubOption))]
+    [JsonSerializable(typeof(VoiceTalent))]
     [JsonSerializable(typeof(SessionLoginRequest))]
     [JsonSerializable(typeof(SessionLoginResponse))]
     [JsonSerializable(typeof(AppendCampaignRequest))]
@@ -31,6 +34,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadCampaignRequest))]
     [JsonSerializable(typeof(ReadCampaignResponse))]
     [JsonSerializable(typeof(UpdateCampaignRequest))]
+    [JsonSerializable(typeof(UpdateCampaignStateRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

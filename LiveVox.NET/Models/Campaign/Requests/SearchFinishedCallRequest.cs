@@ -15,13 +15,14 @@ namespace LiveVox.NET.Models.Campaign.Requests
     public class SearchFinishedCallRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns";
-        public string? FinishedCalls { get; set; } = "finishedCalls";
-        public Method RequestType { get; set; }
+        public string? Resource { get; set; } = "campaigns/{campaign}/finishedCalls";
+        public Method RequestType { get; set; } = Method.Post;
 
         public Task<RestRequest> BuildRequestAsync()
         {
-            var request = new RestRequest($"{Category}/{Resource}/{CampaignId}/{FinishedCalls}", RequestType);
+            
+            var request = new RestRequest(Category + "/" + Resource, RequestType);
+            request.AddParameter("campaign", CampaignId, ParameterType.UrlSegment);
 
             // Add query parameters for count and offset
             request.AddQueryParameter("count", Count.ToString());

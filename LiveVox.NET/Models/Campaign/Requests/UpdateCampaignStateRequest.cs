@@ -7,20 +7,19 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
-using LiveVox.NET.Models.Campaign.Common;
+using LiveVox.NET.Models.Campaign.Enumerations;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Campaign.Requests
 {
-    public class ReadCampaignRequest : ILiveVoxRequest
+    public class UpdateCampaignStateRequest : ILiveVoxRequest
     {
-        public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns/{id}";
-        public Method RequestType { get; set; } = Method.Get;
 
+        public string Category { get; set; } = "campaign";
+        public string Resource { get; set; } = "campaigns/{id}/state";
+        public Method RequestType { get; set; } = Method.Put;
         public Task<RestRequest> BuildRequestAsync()
         {
-            
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("id", CampaignId, ParameterType.UrlSegment);
 
@@ -31,11 +30,18 @@ namespace LiveVox.NET.Models.Campaign.Requests
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
-
+        
         /// <summary>
-        /// Gets or sets the ID of the campaign to append records to.
+        /// ID of the campaign which will have its state updated.
         /// </summary>
+        [Required]
         public int CampaignId { get; set; }
 
+        /// <summary>
+        /// Desired state of the campaign. Possible values are STOP, PLAY, PAUSE, or BUILD.
+        /// </summary>
+        [Required]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public CampaignState State { get; set; }
     }
 }

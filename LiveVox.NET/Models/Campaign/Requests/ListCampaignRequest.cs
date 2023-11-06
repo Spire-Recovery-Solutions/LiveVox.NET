@@ -14,7 +14,7 @@ namespace LiveVox.NET.Models.Campaign.Requests
     {
         public string? Category { get; set; } = "campaign";
         public string? Resource { get; set; } = "campaigns";
-        public Method RequestType { get; set; }
+        public Method RequestType { get; set; } = Method.Get;
 
         public Task<RestRequest> BuildRequestAsync()
         {

@@ -13,13 +13,15 @@ namespace LiveVox.NET.Models.Campaign.Requests
     public class ListCampaignTransactionsRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns";
+        public string? Resource { get; set; } = "campaigns/{id}/transactionList";
         public string? TransactionList { get; set; } = "transactionList";
-        public Method RequestType { get; set; }
+        public Method RequestType { get; set; } = Method.Get;
         
         public Task<RestRequest> BuildRequestAsync()
         {
-            var request = new RestRequest($"{Category}/{Resource}/{CampaignId}/{TransactionList}", RequestType);
+            
+            var request = new RestRequest(Category + "/" + Resource, RequestType);
+            request.AddParameter("id", CampaignId, ParameterType.UrlSegment);
 
             request.AddQueryParameter("count", Count.ToString());
             request.AddQueryParameter("offset", Offset.ToString());

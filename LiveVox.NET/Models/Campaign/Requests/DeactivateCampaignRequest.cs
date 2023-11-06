@@ -14,14 +14,14 @@ namespace LiveVox.NET.Models.Campaign.Requests
     public class DeactivateCampaignRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns";
-        public string? Deactivate { get; set; } = "deactivate";
-
-        public Method RequestType { get; set; }
+        public string? Resource { get; set; } = "campaigns/{id}/deactivate";
+        public Method RequestType { get; set; } = Method.Post;
         
         public Task<RestRequest> BuildRequestAsync()
         {
-            var request = new RestRequest($"{Category}/{Resource}/{CampaignId}/{Deactivate}", RequestType);
+            var request = new RestRequest(Category + "/" + Resource, RequestType);
+            request.AddParameter("id", CampaignId, ParameterType.UrlSegment);
+
             // Serialize the request using the source-generated context for the specific type of 'request'
             var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 
