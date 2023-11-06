@@ -41,7 +41,6 @@ namespace LiveVox.NET.Models.Campaign.Requests
         /// Desired state of the campaign. Possible values are STOP, PLAY, PAUSE, or BUILD.
         /// </summary>
         [Required]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public CampaignState State { get; set; }
     }
 }
