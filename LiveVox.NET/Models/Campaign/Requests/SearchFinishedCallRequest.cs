@@ -15,12 +15,13 @@ namespace LiveVox.NET.Models.Campaign.Requests
     public class SearchFinishedCallRequest : ILiveVoxRequest
     {
         public string? Category { get; set; } = "campaign";
-        public string? Resource { get; set; } = "campaigns/{campaign}/finishedCalls";
+        public string? Resource { get; set; } = "campaigns";
+        public string? FinishedCalls { get; set; } = "finishedCalls";
         public Method RequestType { get; set; }
 
         public Task<RestRequest> BuildRequestAsync()
         {
-            var request = new RestRequest(Category + "/" + Resource.Replace("{campaign}", CampaignId.ToString()), RequestType);
+            var request = new RestRequest($"{Category}/{Resource}/{CampaignId}/{FinishedCalls}", RequestType);
 
             // Add query parameters for count and offset
             request.AddQueryParameter("count", Count.ToString());
@@ -38,7 +39,6 @@ namespace LiveVox.NET.Models.Campaign.Requests
         /// <summary>
         /// Gets or sets the identifier of the campaign you want to query.
         /// </summary>
-        [Required]
         public int CampaignId { get; set; }
         
         /// <summary>
