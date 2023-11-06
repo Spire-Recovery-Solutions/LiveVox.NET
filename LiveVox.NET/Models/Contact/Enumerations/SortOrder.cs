@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 namespace LiveVox.NET.Models.Contact.Enumerations
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum Rule
+    public enum SortOrder
     {
-        [JsonPropertyName("AND")]
-        And = 0,
-        [JsonPropertyName("OR")]
-        Or = 1,
+        [JsonPropertyName("ASc")]
+        Asc = 0,
+
+        [JsonPropertyName("DESC")]
+        Desc =1
     }
 }
