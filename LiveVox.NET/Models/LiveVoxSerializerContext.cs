@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.Enumerations;
+using LiveVox.NET.Models.Contact.Common.Contacts;
 using LiveVox.NET.Models.Contact.Enumerations;
 using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
 using LiveVox.NET.Models.Contact.Requests.ContactGroups;
@@ -35,7 +36,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadContactGroupResponse))]
     [JsonSerializable(typeof(UpdateContactGroupRequest))]
     [JsonSerializable(typeof(ReadContactNoteResponse))]
-    [JsonSerializable(typeof(Rule))]
+    [JsonSerializable(typeof(RuleOperator))]
     [JsonSerializable(typeof(ExportField))]
     [JsonSerializable(typeof(BulkContactDownloadRequest))]
     [JsonSerializable(typeof(UpdateContactDndRequest))]
@@ -43,6 +44,12 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadCustomFieldResponse))]
     [JsonSerializable(typeof(UpdateCustomFieldRequest))]
     [JsonSerializable(typeof(CustomFieldEnum))]
+    [JsonSerializable(typeof(CustomFieldDataType))]
+    [JsonSerializable(typeof(SearchContactsResponse))]
+    [JsonSerializable(typeof(ConditionType))]
+    [JsonSerializable(typeof(ContactField))]
+    [JsonSerializable(typeof(SortField))]
+    [JsonSerializable(typeof(SortOrder))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

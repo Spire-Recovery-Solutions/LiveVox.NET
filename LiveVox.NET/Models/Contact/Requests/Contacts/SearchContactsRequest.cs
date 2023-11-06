@@ -49,6 +49,13 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
         /// </summary>
         [Required]
         [JsonPropertyName("search")]
-        public SearchContact Search { get; set; }
+        public object Search { get; set; }
+
+        /// <summary>
+        /// The sort order of the returned contacts.
+        /// </summary>
+        [JsonPropertyName("sort")]
+        public ICollection<Sort> Sort { get; set; }
+        
     }
 }
