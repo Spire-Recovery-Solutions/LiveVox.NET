@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Contact\Requests\ContactNotes\" />
     <Folder Include="Models\Contact\Requests\CustomField\" />
-    <Folder Include="Models\Contact\Responses\ContactNotes\" />
     <Folder Include="Models\Contact\Responses\CustomField\" />
     <Folder Include="Models\Session\Enumerations\" />
   </ItemGroup>
