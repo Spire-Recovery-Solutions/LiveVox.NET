@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Campaign.CreateCampaign
+namespace LiveVox.NET.Models.Campaign.Responses
 {
     public class CreateCampaignResponse : ILiveVoxResponse
     {

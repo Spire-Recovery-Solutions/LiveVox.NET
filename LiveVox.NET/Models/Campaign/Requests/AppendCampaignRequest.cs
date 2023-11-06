@@ -5,7 +5,7 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Campaign.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Campaign.AppendCampaign
+namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class AppendCampaignRequest : ILiveVoxRequest
     {

@@ -1,8 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
-using LiveVox.NET.Models.Campaign.AppendCampaign;
 using LiveVox.NET.Models.Campaign.Common;
-using LiveVox.NET.Models.Campaign.CreateCampaign;
 using LiveVox.NET.Models.Campaign.Enumerations;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;

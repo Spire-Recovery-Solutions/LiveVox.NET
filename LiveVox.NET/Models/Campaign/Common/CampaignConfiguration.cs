@@ -1,5 +1,4 @@
-﻿using LiveVox.NET.Models.Campaign.CreateCampaign;
-using LiveVox.NET.Models.Campaign.Enumerations;
+﻿using LiveVox.NET.Models.Campaign.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

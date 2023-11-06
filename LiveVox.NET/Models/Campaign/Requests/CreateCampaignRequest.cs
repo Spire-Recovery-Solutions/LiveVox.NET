@@ -13,7 +13,7 @@ using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.Enumerations;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Campaign.CreateCampaign
+namespace LiveVox.NET.Models.Campaign.Requests
 {
     public class CreateCampaignRequest : ILiveVoxRequest
     {
