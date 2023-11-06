@@ -17,36 +17,36 @@ namespace LiveVox.NET.Models.Contact.Enumerations
         /// Sets Daily Do Not Dial (DND).
         /// </summary>
         [JsonPropertyName("DAILY")]
-        Daily,
+        Daily = 0,
 
         /// <summary>
         /// Sets Permanent DND.
         /// </summary>
         [JsonPropertyName("PERMANENT")]
-        Permanent,
+        Permanent = 1,
 
         /// <summary>
         /// Turns off both DNDs.
         /// </summary>
         [JsonPropertyName("NONE")]
-        None,
+        None = 2,
 
         /// <summary>
         /// Sets both DNDs.
         /// </summary>
         [JsonPropertyName("BOTH")]
-        Both,
+        Both = 3,
 
         /// <summary>
         /// Turns off Daily DND.
         /// </summary>
         [JsonPropertyName("DAILY_OFF")]
-        DailyOff,
+        DailyOff = 4,
 
         /// <summary>
         /// Turns off Permanent DND.
         /// </summary>
         [JsonPropertyName("PERMANENT_OFF")]
-        PermanentOff
+        PermanentOff = 5
     }
 }

@@ -119,12 +119,12 @@ public class ContactDetails
     [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
-    ///// <summary>
-    ///// Custom field values associated with a contact.
-    ///// </summary>
-    //[JsonPropertyName("customFields")]
-    // public ICollection<CustomField> CustomFields { get; set; }
-    
+    /// <summary>
+    /// Custom field values associated with a contact.
+    /// </summary>
+    [JsonPropertyName("customFields")]
+    public ICollection<CustomField> CustomFields { get; set; }
+
     /// <summary>
     /// Used to indicate whether the contact has given consent to receive e-mail.
     /// </summary>
