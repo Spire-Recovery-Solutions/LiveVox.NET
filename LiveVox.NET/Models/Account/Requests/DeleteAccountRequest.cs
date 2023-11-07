@@ -12,8 +12,11 @@ namespace LiveVox.NET.Models.Account.Requests
 {
     public class DeleteAccountRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "account";
+        [JsonIgnore]
         public string? Resource { get; set; } = "accounts/{id}";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Delete;
 
         public Task<RestRequest> BuildRequestAsync()
