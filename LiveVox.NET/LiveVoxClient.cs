@@ -48,26 +48,25 @@ namespace LiveVox.NET
                 if (sessionValidResponse.StatusCode != HttpStatusCode.NoContent) //Session Invalid
                 {
                     //TODO: Call Login
+                    //TODO: Auth
+                    /*
+                     *
+                     * An access token is only required on the Session API login request.
+                     * All other requests made with the resulting session will be tied to the API token provided in the login request for tracking purposes.
+                     *
+                     * Request a session id from https://api.livevox.com/session using the Access Token with the header LV-Access
+                     * Session IDs will expire if there is no activity for 2 hours.
+                     * Login requests by the same user with the same API Token will return the same Session ID if a valid one already exists.
+                     * In addition, because Session IDs are tied to the LV-Access token, if a user makes two login requests with different API Tokens, then unique Session IDs will be returned.
+                     *
+                     * So we will have to call IsSessionValid and then request a SessionId if it is not true, and append Session Id to the header of all subsequent requests.
+                     */
                 }
             }
 
             // Create a RestRequest with the specified endpoint and method
             var restRequest = await request.BuildRequestAsync();
-
-            //TODO: Auth
-            /*
-             *
-             * An access token is only required on the Session API login request.
-             * All other requests made with the resulting session will be tied to the API token provided in the login request for tracking purposes.
-             *
-             * Request a session id from https://api.livevox.com/session using the Access Token with the header LV-Access
-             * Session IDs will expire if there is no activity for 2 hours.
-             * Login requests by the same user with the same API Token will return the same Session ID if a valid one already exists.
-             * In addition, because Session IDs are tied to the LV-Access token, if a user makes two login requests with different API Tokens, then unique Session IDs will be returned.
-             *
-             * So we will have to call IsSessionValid and then request a SessionId if it is not true, and append Session Id to the header of all subsequent requests.
-             */
-
+            
             restRequest.AddHeader("LV-Session", _sessionId);
 
 
