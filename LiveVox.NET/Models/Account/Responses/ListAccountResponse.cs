@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Account.Responses;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Account.Requests
+namespace LiveVox.NET.Models.Account.Responses
 {
     public class ListAccountResponse : ILiveVoxResponse
     {
