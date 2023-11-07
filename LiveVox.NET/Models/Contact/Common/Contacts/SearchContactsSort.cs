@@ -4,12 +4,12 @@ using LiveVox.NET.Models.Contact.Enumerations;
 
 namespace LiveVox.NET.Models.Contact.Common.Contacts;
 
-public class Sort
+public class SearchContactsSort
 {
     [JsonPropertyName("field")]
     [Required]
     [MaxLength(255)]
-    public SortField Field { get; set; }
+    public SearchContactsSortField Field { get; set; }
 
     [JsonPropertyName("order")]
     [JsonConverter(typeof(JsonStringEnumConverter))]

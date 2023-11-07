@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Contact.Common.Contacts;
+using LiveVox.NET.Models.Contact.Enumerations;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Contact.Requests.Contacts
@@ -57,6 +58,6 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
         /// It could take the format "CCYY-MM-DD" like "2020-01-01" or Unix timestamp like 1577858400000 (in milliseconds).
         /// </summary>
         [JsonPropertyName("exportableFields")]
-        public ExportableField ExportableFields { get; set; }
+        public ICollection<ExportableFieldBulkDownload> ExportableFields { get; set; }
     }
 }

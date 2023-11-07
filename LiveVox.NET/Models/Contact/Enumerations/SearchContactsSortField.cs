@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LiveVox.NET.Models.Contact.Enumerations
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum SortField
+    public enum SearchContactsSortField
     {
         [JsonPropertyName("LVACCOUNT_ID")]
         LVACCOUNT_ID = 0,

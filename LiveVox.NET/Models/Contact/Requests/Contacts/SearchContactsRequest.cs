@@ -58,7 +58,7 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
         /// The sort order of the returned contacts.
         /// </summary>
         [JsonPropertyName("sort")]
-        public ICollection<Sort> Sort { get; set; }
+        public ICollection<SearchContactsSort> Sort { get; set; }
         
     }
 }

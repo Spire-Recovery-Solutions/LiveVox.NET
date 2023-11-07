@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LiveVox.NET.Models.Contact.Enumerations
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum ExportField
+    public enum ExportableFieldBulkDownload
     {
         [JsonPropertyName("allFields")]
         AllFields = 0,

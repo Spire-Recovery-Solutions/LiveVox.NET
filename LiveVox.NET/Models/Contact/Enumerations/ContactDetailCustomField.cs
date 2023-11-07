@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LiveVox.NET.Models.Contact.Enumerations
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum CustomFieldEnum
+    public enum ContactDetailCustomField
     {
         [JsonPropertyName("COL1")]
         COL1 = 0,

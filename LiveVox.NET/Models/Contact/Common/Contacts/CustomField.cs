@@ -22,7 +22,7 @@ namespace LiveVox.NET.Models.Contact.Common.Contacts
         /// </summary>
         [JsonPropertyName("field")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public CustomFieldEnum Field { get; set; }
+        public ContactDetailCustomField Field { get; set; }
 
         /// <summary>
         /// The value to place into the custom field.
