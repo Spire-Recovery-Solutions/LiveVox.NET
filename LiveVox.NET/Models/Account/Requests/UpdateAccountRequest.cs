@@ -12,7 +12,6 @@ namespace LiveVox.NET.Models.Account.Requests
 {
     public class UpdateAccountRequest : Common.Account , ILiveVoxRequest
     {
-         
         [JsonIgnore]
         public string? Category { get; set; } = "account";
         [JsonIgnore]
