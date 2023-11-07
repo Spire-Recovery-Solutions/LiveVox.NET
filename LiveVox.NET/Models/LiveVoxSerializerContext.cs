@@ -12,6 +12,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AnsweringMachineOption))]
     [JsonSerializable(typeof(CustomFieldName))]
     [JsonSerializable(typeof(SecureFieldName))]
+    [JsonSerializable(typeof(ParentType))]
     [JsonSerializable(typeof(SessionLoginRequest))]
     [JsonSerializable(typeof(SessionLoginResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
@@ -19,6 +20,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CreateAccountResponse))]
     [JsonSerializable(typeof(CreateMultipleAccountRequest))]
     [JsonSerializable(typeof(CreateMultipleAccountResponse))]
+    [JsonSerializable(typeof(ReadAccountRequest))]
+    [JsonSerializable(typeof(ReadAccountResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
