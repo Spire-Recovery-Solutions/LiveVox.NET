@@ -23,6 +23,11 @@ namespace LiveVox.NET.Models.Account.Requests
 
             return Task.FromResult(request);
         }
+
+        public DeleteAccountRequest(int accountId)
+        {
+            AccountId = accountId;
+        }
         /// <summary>
         /// Gets or sets the Account ID to be deleted.
         /// </summary>

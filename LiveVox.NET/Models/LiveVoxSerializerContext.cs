@@ -33,6 +33,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(LinkAccountToContactRequest))]
     [JsonSerializable(typeof(LinkAccountToMultipleContactsRequest))]
     [JsonSerializable(typeof(LinkAccountToMultipleContactsResponse))]
+    [JsonSerializable(typeof(UnlinkAccountFromContactRequest))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.

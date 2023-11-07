@@ -32,6 +32,11 @@ namespace LiveVox.NET.Models.Account.Requests
             return Task.FromResult(request);
         }
 
+        public ReadAccountRequest(int accountId)
+        {
+            AccountId = accountId;
+        }
+
         /// <summary>
         /// Account ID to be read.
         /// </summary>

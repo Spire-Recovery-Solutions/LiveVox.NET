@@ -30,6 +30,11 @@ namespace LiveVox.NET.Models.Account.Requests
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+
+        public LinkAccountToMultipleContactsRequest(int accountId)
+        {
+            AccountId = accountId;
+        }
         /// <summary>
         /// Gets or sets the Account ID to be linked.
         /// </summary>
