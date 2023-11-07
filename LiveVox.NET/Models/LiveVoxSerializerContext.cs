@@ -31,6 +31,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(AddNoteToAccountRequest))]
     [JsonSerializable(typeof(DeleteAccountRequest))]
     [JsonSerializable(typeof(LinkAccountToContactRequest))]
+    [JsonSerializable(typeof(LinkAccountToMultipleContactsRequest))]
+    [JsonSerializable(typeof(LinkAccountToMultipleContactsResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
