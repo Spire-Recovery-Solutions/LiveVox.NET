@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
@@ -8,7 +8,9 @@ namespace LiveVox.NET.Models.Session
 {
     public class SessionLoginRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "session";
+        [JsonIgnore]
         public string? Resource { get; set; } = "login";
         public Method RequestType { get; set; } = Method.Post;
 
