@@ -15,6 +15,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(SessionLoginResponse))]
     [JsonSerializable(typeof(CreateAccountRequest))]
     [JsonSerializable(typeof(CreateAccountResponse))]
+    [JsonSerializable(typeof(CreateMultipleAccountRequest))]
+    [JsonSerializable(typeof(CreateMultipleAccountResponse))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.

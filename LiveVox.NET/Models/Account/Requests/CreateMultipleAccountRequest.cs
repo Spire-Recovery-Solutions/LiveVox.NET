@@ -1,17 +1,22 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Account.Requests
 {
-    public class CreateAccountRequest : ILiveVoxRequest
+    public class CreateMultipleAccountRequest : ILiveVoxRequest
     {
+
         [JsonIgnore]
         public string? Category { get; set; } = "account";
         [JsonIgnore]
-        public string? Resource { get; set; } = "accounts";
+        public string? Resource { get; set; } = "accounts/bulk";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
 
@@ -26,9 +31,10 @@ namespace LiveVox.NET.Models.Account.Requests
             return Task.FromResult(request);
         }
 
+
         /// <summary>
-        /// Gets or sets the newly created account.
+        /// Gets or sets a list of accounts to be created.
         /// </summary>
-         public Common.Account Account { get; set; }
+        public ICollection<Common.Account> Accounts { get; set; }
     }
 }
