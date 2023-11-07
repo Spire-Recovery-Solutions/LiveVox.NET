@@ -29,6 +29,10 @@ namespace LiveVox.NET.Models.Account.Requests
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+        public AddNoteToAccountRequest(int accountId)
+        {
+            AccountId = accountId;
+        }
         
         /// <summary>
         /// Account ID to be read.
