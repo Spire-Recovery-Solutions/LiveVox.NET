@@ -2,6 +2,17 @@
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.Enumerations;
+using LiveVox.NET.Models.Contact.Common.Contacts;
+using LiveVox.NET.Models.Contact.Enumerations;
+using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
+using LiveVox.NET.Models.Contact.Requests.ContactGroups;
+using LiveVox.NET.Models.Contact.Requests.Contacts;
+using LiveVox.NET.Models.Contact.Requests.CustomField;
+using LiveVox.NET.Models.Contact.Responses.Contact_Groups;
+using LiveVox.NET.Models.Contact.Responses.ContactGroups;
+using LiveVox.NET.Models.Contact.Responses.ContactNotes;
+using LiveVox.NET.Models.Contact.Responses.Contacts;
+using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
 using LiveVox.NET.Models.Session;
@@ -17,6 +28,37 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(VoiceTalent))]
     [JsonSerializable(typeof(SessionLoginRequest))]
     [JsonSerializable(typeof(SessionLoginResponse))]
+    [JsonSerializable(typeof(DialBlockOption))]
+    [JsonSerializable(typeof(CreateContactRequest))]
+    [JsonSerializable(typeof(CreateContactResponse))]
+    [JsonSerializable(typeof(BulkCreateContactRequest))]
+    [JsonSerializable(typeof(BulkCreateOrUpdateContactResponse))]
+    [JsonSerializable(typeof(SearchContactsRequest))]
+    [JsonSerializable(typeof(ListContactsResponse))]
+    [JsonSerializable(typeof(ReadContactResponse))]
+    [JsonSerializable(typeof(UpdateContactRequest))]
+    [JsonSerializable(typeof(BulkUpdateContactRequest))]
+    [JsonSerializable(typeof(CreateContactGroupRequest))]
+    [JsonSerializable(typeof(CreateContactGroupResponse))]
+    [JsonSerializable(typeof(ListContactGroupResponse))]
+    [JsonSerializable(typeof(ReadContactGroupResponse))]
+    [JsonSerializable(typeof(UpdateContactGroupRequest))]
+    [JsonSerializable(typeof(ReadContactNoteResponse))]
+    [JsonSerializable(typeof(RuleOperator))]
+    [JsonSerializable(typeof(ExportableFieldBulkDownload))]
+    [JsonSerializable(typeof(BulkContactDownloadRequest))]
+    [JsonSerializable(typeof(UpdateContactDndRequest))]
+    [JsonSerializable(typeof(ListCustomFieldResponse))]
+    [JsonSerializable(typeof(ReadCustomFieldResponse))]
+    [JsonSerializable(typeof(UpdateCustomFieldRequest))]
+    [JsonSerializable(typeof(ContactDetailCustomField))]
+    [JsonSerializable(typeof(CustomFieldDataType))]
+    [JsonSerializable(typeof(SearchContactsResponse))]
+    [JsonSerializable(typeof(ConditionType))]
+    [JsonSerializable(typeof(SearchConditionContactField))]
+    [JsonSerializable(typeof(SearchContactsSortField))]
+    [JsonSerializable(typeof(SortOrder))]
+    [JsonSerializable(typeof(ListAccountsResponse))]
     [JsonSerializable(typeof(AppendCampaignRequest))]
     [JsonSerializable(typeof(CreateCampaignRequest))]
     [JsonSerializable(typeof(CreateCampaignResponse))]
