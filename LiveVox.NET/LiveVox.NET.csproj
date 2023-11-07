@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\CallControl\**" />
+    <EmbeddedResource Remove="Models\CallControl\**" />
+    <None Remove="Models\CallControl\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
