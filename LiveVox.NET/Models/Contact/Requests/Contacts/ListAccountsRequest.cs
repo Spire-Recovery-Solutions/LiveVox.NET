@@ -1,12 +1,16 @@
 ﻿using LiveVox.NET.Models.Base;
 using RestSharp;
+using System.Text.Json.Serialization;
 
 namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class ListAccountsRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contacts/{contactId}/accounts";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()
         {

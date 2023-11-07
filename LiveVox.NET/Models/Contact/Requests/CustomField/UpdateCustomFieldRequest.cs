@@ -12,8 +12,11 @@ namespace LiveVox.NET.Models.Contact.Requests.CustomField
 {
     public class UpdateCustomFieldRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contacts/customFields";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Put;
         public Task<RestRequest> BuildRequestAsync()
         {

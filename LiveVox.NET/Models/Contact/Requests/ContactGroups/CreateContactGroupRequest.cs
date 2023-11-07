@@ -14,8 +14,11 @@ namespace LiveVox.NET.Models.Contact.Requests.Contact_Groups
 {
     public class CreateContactGroupRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contactGroups";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
         public Task<RestRequest> BuildRequestAsync()
         {

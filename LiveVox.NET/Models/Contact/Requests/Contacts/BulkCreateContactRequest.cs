@@ -10,8 +10,11 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class BulkCreateContactRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contacts/bulk";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
         public Task<RestRequest> BuildRequestAsync()
         {

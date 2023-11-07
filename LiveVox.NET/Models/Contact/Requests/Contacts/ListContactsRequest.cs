@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
@@ -6,8 +7,11 @@ namespace LiveVox.NET.Models.Contact.Requests.Contacts
 {
     public class ListContactsRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contacts";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()
         {

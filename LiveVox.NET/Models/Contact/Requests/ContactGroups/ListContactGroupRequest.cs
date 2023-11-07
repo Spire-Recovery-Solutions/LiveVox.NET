@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
@@ -11,8 +12,11 @@ namespace LiveVox.NET.Models.Contact.Requests.Contact_Groups
 {
     public class ListContactGroupRequest : ILiveVoxRequest
     {
+        [JsonIgnore]
         public string? Category { get; set; } = "contact";
+        [JsonIgnore]
         public string? Resource { get; set; } = "contactGroups";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()
         {
