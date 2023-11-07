@@ -47,7 +47,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CustomFieldDataType))]
     [JsonSerializable(typeof(SearchContactsResponse))]
     [JsonSerializable(typeof(ConditionType))]
-    [JsonSerializable(typeof(ContactFieldSearchCondition))]
+    [JsonSerializable(typeof(SearchConditionContactField))]
     [JsonSerializable(typeof(SearchContactsSortField))]
     [JsonSerializable(typeof(SortOrder))]
     [JsonSerializable(typeof(ListAccountsResponse))]

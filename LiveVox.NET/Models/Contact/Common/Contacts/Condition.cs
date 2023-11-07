@@ -13,7 +13,7 @@ public class Condition
     [Required]
     [MaxLength(255)]
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public ContactFieldSearchCondition Field { get; set; }
+    public SearchConditionContactField Field { get; set; }
 
     [JsonPropertyName("criteria")]
     [Required]
