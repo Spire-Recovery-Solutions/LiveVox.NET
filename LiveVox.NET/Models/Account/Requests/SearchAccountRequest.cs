@@ -13,7 +13,6 @@ namespace LiveVox.NET.Models.Account.Requests
 {
     public class SearchAccountRequest : ILiveVoxRequest
     {
-        
         [JsonIgnore]
         public string? Category { get; set; } = "account";
         [JsonIgnore]

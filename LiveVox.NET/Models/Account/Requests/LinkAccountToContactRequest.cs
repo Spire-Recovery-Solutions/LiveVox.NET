@@ -10,12 +10,12 @@ using RestSharp;
 
 namespace LiveVox.NET.Models.Account.Requests
 {
-    public class CreateMultipleAccountRequest : ILiveVoxRequest
+    public class LinkAccountToContactRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "account";
         [JsonIgnore]
-        public string? Resource { get; set; } = "accounts/bulk";
+        public string? Resource { get; set; } = "accounts/{id}/contacts";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
 
@@ -29,11 +29,15 @@ namespace LiveVox.NET.Models.Account.Requests
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
-
+        /// <summary>
+        /// Gets or sets the Account ID to be linked.
+        /// </summary>
+        public int AccountId { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of accounts to be created.
+        /// Gets or sets the Contact ID to associate with the account.
         /// </summary>
-        public ICollection<Common.Account> Accounts { get; set; }
+        [JsonPropertyName("contactId")]
+        public string ContactId { get; set; }
     }
 }
