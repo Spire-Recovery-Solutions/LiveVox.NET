@@ -252,7 +252,7 @@ namespace LiveVox.NET.Models.Account.Common
         /// Gets or sets custom field values associated with an account.
         /// </summary>
         [JsonPropertyName("customFields")]
-        public ICollection<CustomField> CustomFields { get; set; }
+        public ICollection<AccountCustomField> CustomFields { get; set; }
 
         /// <summary>
         /// Gets or sets secure field values associated with an account.

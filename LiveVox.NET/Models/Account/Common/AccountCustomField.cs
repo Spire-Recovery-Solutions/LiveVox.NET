@@ -9,14 +9,14 @@ using LiveVox.NET.Models.Account.Enumerations;
 
 namespace LiveVox.NET.Models.Account.Common
 {
-    public class CustomField
+    public class AccountCustomField
     {
         /// <summary>
         /// Gets or sets the custom field name where the data will be stored.
         /// </summary>
         [JsonPropertyName("field")]
         [Required]
-        public CustomFieldName Field { get; set; }
+        public CustomFieldName? Field { get; set; }
 
         /// <summary>
         /// Gets or sets the value to place into the custom field.
@@ -24,6 +24,6 @@ namespace LiveVox.NET.Models.Account.Common
         [JsonPropertyName("value")]
         [Required]
         [MaxLength(255)]
-        public string Value { get; set; }
+        public string? Value { get; set; }
     }
 }
