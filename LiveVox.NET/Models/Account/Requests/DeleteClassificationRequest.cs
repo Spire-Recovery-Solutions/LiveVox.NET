@@ -1,17 +1,17 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
-using LiveVox.NET.Models.Account.Common;
+using RestSharp;
 
 namespace LiveVox.NET.Models.Account.Requests
 {
-    public class ReadClassificationRequest : ILiveVoxRequest
+    public class DeleteClassificationRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "account";
@@ -24,18 +24,23 @@ namespace LiveVox.NET.Models.Account.Requests
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("id", ClassificationId, ParameterType.UrlSegment);
+            // Serialize the request using the source-generated context for the specific type of 'request'
+            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 
+            // Add the serialized request body to the RestRequest
+            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
-
-        public ReadClassificationRequest(int classificationId)
+        
+        public DeleteClassificationRequest(int classificationId)
         {
             ClassificationId = classificationId;
         }
+
         /// <summary>
-        /// Gets or sets the Classification ID to be read.
+        /// Gets or sets the Classification ID to be deleted.
         /// </summary>
-        [JsonPropertyName("id")]
+        [Required]
         public int ClassificationId { get; set; }
     }
 }

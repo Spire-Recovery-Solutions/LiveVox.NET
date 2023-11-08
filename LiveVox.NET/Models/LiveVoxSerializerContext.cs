@@ -38,6 +38,10 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CreateClassificationResponse))]
     [JsonSerializable(typeof(ReadClassificationRequest))]
     [JsonSerializable(typeof(ReadClassificationResponse))]
+    [JsonSerializable(typeof(ListAllClassificationRequest))]
+    [JsonSerializable(typeof(ListAllClassificationResponse))]
+    [JsonSerializable(typeof(UpdateClassificationRequest))]
+    [JsonSerializable(typeof(DeleteClassificationRequest))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
