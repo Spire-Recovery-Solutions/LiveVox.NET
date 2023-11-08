@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Account.Common
 {
-    public class Classification
+    public class AccountClassification
     {
         /// <summary>
         /// A number indicating the sequence in the display.
@@ -17,16 +17,16 @@ namespace LiveVox.NET.Models.Account.Common
         public int Level { get; set; }
 
         /// <summary>
-        /// Name of the classification.
+        /// Name of the classification & Account.
         /// </summary>
         [Required]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// The ID of the classification.
+        /// The ID of the classification and accountId.
         /// </summary>
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int ClassificationId { get; set; }
     }
 }

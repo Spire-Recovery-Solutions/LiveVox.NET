@@ -5,16 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using LiveVox.NET.Models.Account.Common;
 using LiveVox.NET.Models.Base;
 
 namespace LiveVox.NET.Models.Account.Responses
 {
-    public class ListAllClassificationResponse : ILiveVoxResponse
+    public class CreateAccountTypeResponse : ILiveVoxResponse
     {
+        
         /// <summary>
-        /// A list of classifications
+        /// The ID of the newly created type.
         /// </summary>
-        public ICollection<AccountClassification> Classfications { get; set; }
+        [JsonPropertyName("id")]
+        [Required]
+        public int Id { get; set; }
     }
 }
