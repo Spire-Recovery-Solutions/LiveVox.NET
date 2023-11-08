@@ -22,6 +22,7 @@ namespace LiveVox.NET.Models.Account.Requests
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
+            request.AddParameter("id", AccountId, ParameterType.UrlSegment);
             // Serialize the request using the source-generated context for the specific type of 'request'
             var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 

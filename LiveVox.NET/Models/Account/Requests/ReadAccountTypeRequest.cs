@@ -23,20 +23,20 @@ namespace LiveVox.NET.Models.Account.Requests
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
-            request.AddParameter("id", ClassificationId, ParameterType.UrlSegment);
+            request.AddParameter("id", AccountId, ParameterType.UrlSegment);
 
             return Task.FromResult(request);
         }
         
-        public ReadAccountTypeRequest(int classificationId)
+        public ReadAccountTypeRequest(int accountId)
         {
-            ClassificationId = classificationId;
+            AccountId = accountId;
         }
 
         /// <summary>
         /// Gets or sets the Classification ID to be read.
         /// </summary>
         [Required]
-        public int ClassificationId { get; set; }
+        public int AccountId { get; set; }
     }
 }

@@ -23,6 +23,7 @@ namespace LiveVox.NET.Models.Account.Requests
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("id", AccountId, ParameterType.UrlSegment);
+
             return Task.FromResult(request);
         }
 
