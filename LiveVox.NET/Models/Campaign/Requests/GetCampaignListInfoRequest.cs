@@ -15,7 +15,7 @@ namespace LiveVox.NET.Models.Campaign.Requests
         [JsonIgnore]
         public string? Category { get; set; } = "campaign";
         [JsonIgnore]
-        public string? Resource { get; set; } = "/campaigns/info";
+        public string? Resource { get; set; } = "campaigns/info";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
         

@@ -81,6 +81,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(UpdateCampaignStateRequest))]
     [JsonSerializable(typeof(IsComplianceBlockedRequest))]
     [JsonSerializable(typeof(IsComplianceBlockedResponse))]
+    [JsonSerializable(typeof(ZipAreaMatchRequest))]
+    [JsonSerializable(typeof(ZipAreaMatchResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

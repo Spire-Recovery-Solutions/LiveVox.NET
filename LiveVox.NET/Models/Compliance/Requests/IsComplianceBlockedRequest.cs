@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -28,11 +29,6 @@ namespace LiveVox.NET.Models.Compliance.Requests
             request.AddQueryParameter("account", Account);
             request.AddQueryParameter("zip", Zip);
 
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
         
@@ -44,6 +40,7 @@ namespace LiveVox.NET.Models.Compliance.Requests
         /// <summary>
         /// Gets or sets the Service ID. If provided, DNC entries for this particular Service are checked in addition to the "generic" Client ones.
         /// </summary>
+        [Required]
         public int ServiceId { get; set; }
 
         /// <summary>
