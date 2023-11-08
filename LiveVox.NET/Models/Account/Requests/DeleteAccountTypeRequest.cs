@@ -18,7 +18,7 @@ namespace LiveVox.NET.Models.Account.Requests
         [JsonIgnore]
         public string? Resource { get; set; } = "type/{id}";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Put;
+        public Method RequestType { get; set; } = Method.Delete;
 
         public Task<RestRequest> BuildRequestAsync()
         {
