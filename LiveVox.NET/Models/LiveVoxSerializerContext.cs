@@ -15,6 +15,8 @@ using LiveVox.NET.Models.Contact.Responses.Contacts;
 using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
+using LiveVox.NET.Models.Compliance.Requests;
+using LiveVox.NET.Models.Compliance.Responses;
 using LiveVox.NET.Models.Session;
 
 namespace LiveVox.NET.Models
@@ -77,6 +79,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadCampaignResponse))]
     [JsonSerializable(typeof(UpdateCampaignRequest))]
     [JsonSerializable(typeof(UpdateCampaignStateRequest))]
+    [JsonSerializable(typeof(IsComplianceBlockedRequest))]
+    [JsonSerializable(typeof(IsComplianceBlockedResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
