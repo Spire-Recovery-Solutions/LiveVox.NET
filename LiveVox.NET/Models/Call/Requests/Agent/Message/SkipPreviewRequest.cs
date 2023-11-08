@@ -7,35 +7,35 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace LiveVox.NET.Models.Call.Requests.Agent.Chat
+namespace LiveVox.NET.Models.Call.Requests.Agent.Message
 {
-    public class MarkAsReadRequest: ILiveVoxRequest
+    public class SkipPreviewRequest: ILiveVoxRequest
     {
         [JsonIgnore] 
         public string? Category { get; set; } = "callControl";
 
         [JsonIgnore] 
-        public string? Resource { get; set; } = "agent/chat/post";
+        public string? Resource { get; set; } = "agent/customer/call/preview/skip";
 
         [JsonIgnore] 
-        public Method RequestType { get; set; } = Method.Get;
+        public Method RequestType { get; set; } = Method.Post;
 
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
 
-            request.AddQueryParameter("id", Id);
+            request.AddQueryParameter("transactionId", TransactionId);
             return Task.FromResult(request);
         }
 
-        public MarkAsReadRequest(string id)
+        public SkipPreviewRequest(string transactionId)
         {
-            Id = id;
+            TransactionId = transactionId;
         }
 
         /// <summary>
-        /// The ID of the post.
+        /// Transaction ID.
         /// </summary>
-        public string Id { get; set; }
+        public string TransactionId { get; set; }
     }
 }
