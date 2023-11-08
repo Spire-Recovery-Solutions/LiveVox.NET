@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Call.Requests.Agent.Chat
 {
-    public class MarkAsReadRequest: ILiveVoxRequest
+    public class DeletePostRequest: ILiveVoxRequest
     {
         [JsonIgnore] 
         public string? Category { get; set; } = "callControl";
@@ -18,7 +18,7 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.Chat
         public string? Resource { get; set; } = "agent/chat/post";
 
         [JsonIgnore] 
-        public Method RequestType { get; set; } = Method.Get;
+        public Method RequestType { get; set; } = Method.Delete;
 
         public Task<RestRequest> BuildRequestAsync()
         {
@@ -28,7 +28,7 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.Chat
             return Task.FromResult(request);
         }
 
-        public MarkAsReadRequest(string id)
+        public DeletePostRequest(string id)
         {
             Id = id;
         }
