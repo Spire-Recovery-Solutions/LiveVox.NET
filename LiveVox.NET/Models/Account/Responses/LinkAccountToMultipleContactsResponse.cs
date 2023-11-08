@@ -30,6 +30,6 @@ namespace LiveVox.NET.Models.Account.Responses
         /// Gets or sets a list of hints to failed data.
         /// </summary>
         [JsonPropertyName("failedData")]
-        public ICollection<FailedAccount> FailedData { get; set; }
+        public ICollection<FailedDataItem> FailedData { get; set; }
     }
 }

@@ -23,12 +23,6 @@ namespace LiveVox.NET.Models.Account.Requests
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("id", AccountId, ParameterType.UrlSegment);
-
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
 
@@ -40,7 +34,6 @@ namespace LiveVox.NET.Models.Account.Requests
         /// <summary>
         /// Account ID to be read.
         /// </summary>
-        [JsonPropertyName("id")]
         public int AccountId { get; set; }
     }
 }

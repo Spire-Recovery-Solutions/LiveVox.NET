@@ -17,6 +17,6 @@ namespace LiveVox.NET.Models.Account.Responses
         /// </summary>
         [JsonPropertyName("id")]
         [Required]
-        public int Id { get; set; }
+        public int AccountTypeId { get; set; }
     }
 }
