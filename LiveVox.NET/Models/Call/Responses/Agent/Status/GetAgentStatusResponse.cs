@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Call.Common.Agent;
 
 namespace LiveVox.NET.Models.Call.Responses.Agent.Status
 {
