@@ -89,6 +89,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ZipAreaMatchResponse))]
     [JsonSerializable(typeof(CreateDialingPolicyRequest))]
     [JsonSerializable(typeof(CreateDialingPolicyResponse))]
+    [JsonSerializable(typeof(CreateDialingProfileRequest))]
+    [JsonSerializable(typeof(CreateDialingProfileResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
