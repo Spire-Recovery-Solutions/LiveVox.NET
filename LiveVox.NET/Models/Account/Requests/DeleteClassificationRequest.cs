@@ -18,7 +18,7 @@ namespace LiveVox.NET.Models.Account.Requests
         [JsonIgnore]
         public string? Resource { get; set; } = "classifications/{id}";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Get;
+        public Method RequestType { get; set; } = Method.Delete;
 
         public Task<RestRequest> BuildRequestAsync()
         {
