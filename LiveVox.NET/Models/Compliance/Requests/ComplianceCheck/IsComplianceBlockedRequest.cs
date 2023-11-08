@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests
+namespace LiveVox.NET.Models.Compliance.Requests.ComplianceCheck
 {
     public class IsComplianceBlockedRequest : ILiveVoxRequest
     {
@@ -31,7 +31,6 @@ namespace LiveVox.NET.Models.Compliance.Requests
 
             return Task.FromResult(request);
         }
-        
         /// <summary>
         /// Gets or sets the Client ID that identifies which Client the query pertains to.
         /// </summary>

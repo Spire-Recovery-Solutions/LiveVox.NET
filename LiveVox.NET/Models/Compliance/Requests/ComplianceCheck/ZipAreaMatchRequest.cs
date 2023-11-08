@@ -9,7 +9,7 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Enumerations;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests
+namespace LiveVox.NET.Models.Compliance.Requests.ComplianceCheck
 {
     public class ZipAreaMatchRequest : ILiveVoxRequest
     {
@@ -41,6 +41,7 @@ namespace LiveVox.NET.Models.Compliance.Requests
         /// Gets or sets the type that determines what is classified as a "match."
         /// </summary>
         [JsonPropertyName("type")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ZipAreaMatchType MatchType { get; set; }
 
         /// <summary>

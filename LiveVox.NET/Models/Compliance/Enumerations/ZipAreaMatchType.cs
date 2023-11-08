@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Compliance.Enumerations
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ZipAreaMatchType
     {
         /// <summary>

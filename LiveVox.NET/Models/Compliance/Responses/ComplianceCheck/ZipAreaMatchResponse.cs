@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses
+namespace LiveVox.NET.Models.Compliance.Responses.ComplianceCheck
 {
     public class ZipAreaMatchResponse : ILiveVoxResponse
     {

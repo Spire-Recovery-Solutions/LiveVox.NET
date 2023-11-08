@@ -1,8 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
-using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.Enumerations;
-using LiveVox.NET.Models.Contact.Common.Contacts;
 using LiveVox.NET.Models.Contact.Enumerations;
 using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
 using LiveVox.NET.Models.Contact.Requests.ContactGroups;
@@ -15,9 +13,13 @@ using LiveVox.NET.Models.Contact.Responses.Contacts;
 using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
-using LiveVox.NET.Models.Compliance.Requests;
-using LiveVox.NET.Models.Compliance.Responses;
+using LiveVox.NET.Models.Compliance.Enumerations;
+using LiveVox.NET.Models.Compliance.Requests.ComplianceCheck;
+using LiveVox.NET.Models.Compliance.Requests.DialingProfiles;
+using LiveVox.NET.Models.Compliance.Responses.ComplianceCheck;
+using LiveVox.NET.Models.Compliance.Responses.DialingProfiles;
 using LiveVox.NET.Models.Session;
+using DayOfWeek = System.DayOfWeek;
 
 namespace LiveVox.NET.Models
 {
@@ -79,10 +81,14 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadCampaignResponse))]
     [JsonSerializable(typeof(UpdateCampaignRequest))]
     [JsonSerializable(typeof(UpdateCampaignStateRequest))]
+    [JsonSerializable(typeof(ZipAreaMatchType))]
+    [JsonSerializable(typeof(DayOfWeek))]
     [JsonSerializable(typeof(IsComplianceBlockedRequest))]
     [JsonSerializable(typeof(IsComplianceBlockedResponse))]
     [JsonSerializable(typeof(ZipAreaMatchRequest))]
     [JsonSerializable(typeof(ZipAreaMatchResponse))]
+    [JsonSerializable(typeof(CreateDialingPolicyRequest))]
+    [JsonSerializable(typeof(CreateDialingPolicyResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
