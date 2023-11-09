@@ -14,7 +14,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
     public class CreateMultipleDialtimeDNCRequest : ILiveVoxRequest
     {
         [JsonIgnore]
-        public string? Category { get; set; } = "campaign";
+        public string? Category { get; set; } = "compliance";
         [JsonIgnore]
         public string? Resource { get; set; } = "dialtime/dnc/bulk";
         [JsonIgnore]
