@@ -1,6 +1,7 @@
 ﻿using LiveVox.NET.Converter;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,12 @@ namespace LiveVox.NET.Models.Compliance.Common
 {
     public class DialtimeDNCEntry
     {
+        /// <summary>
+        /// Gets or sets the ID for the entry.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
+
         /// <summary>
         /// Gets or sets the phone number to create the Dialtime DNC entry for.
         /// </summary>

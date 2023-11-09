@@ -27,10 +27,13 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
 
             return Task.FromResult(request);
         }
+        public DeleteDialtimeDNCRequest(int dncId)
+        {
+            DncId = dncId;
+        }
         /// <summary>
         /// Gets or sets the dialtime DNC entry id to be deleted.
         /// </summary>
-        [JsonPropertyName("dncId")]
         [Required]
         public int DncId { get; set; }
     }

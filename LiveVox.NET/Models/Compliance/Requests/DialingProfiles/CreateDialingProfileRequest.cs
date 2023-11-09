@@ -59,7 +59,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
         /// Gets or sets an array of policies to be created under the Dialing Profile.
         /// </summary>
         [JsonPropertyName("policy")]
-        public List<DialingPolicy> Policies { get; set; }
+        public ICollection<DialingPolicy> Policies { get; set; }
 
     }
 }

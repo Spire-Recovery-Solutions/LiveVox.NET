@@ -15,7 +15,7 @@ namespace LiveVox.NET.Models.Compliance.Responses.DialingProfiles
         /// Gets or sets a container for a page of Dialing Profile entries.
         /// </summary>
         [JsonPropertyName("dialingProfile")]
-        public List<DialingProfile> DialingProfiles { get; set; }
+        public ICollection<DialingProfile> DialingProfiles { get; set; }
 
         /// <summary>
         /// Gets or sets the URI for the next page of entries. If next is not present or blank, then there are no pages after this one.

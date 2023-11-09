@@ -32,6 +32,11 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+        public UpdateDialingProfileAddServiceRequest(int profileId, int serviceId)
+        {
+            ProfileId = profileId;
+            ServiceId = serviceId;
+        }
         /// <summary>
         /// Gets or sets the ID of the Dialing Profile to be updated.
         /// </summary>

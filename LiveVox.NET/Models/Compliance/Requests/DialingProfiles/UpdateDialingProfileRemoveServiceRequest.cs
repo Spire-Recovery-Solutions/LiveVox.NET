@@ -33,6 +33,11 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
             return Task.FromResult(request);
         }
 
+        public UpdateDialingProfileRemoveServiceRequest(int profileId, int serviceId)
+        {
+            ProfileId = profileId;
+            ServiceId = serviceId;
+        }
         /// <summary>
         /// Gets or sets the ID of the Dialing Profile to be updated.
         /// </summary>
