@@ -16,8 +16,10 @@ using LiveVox.NET.Models.Campaign.Responses;
 using LiveVox.NET.Models.Compliance.Enumerations;
 using LiveVox.NET.Models.Compliance.Requests.ComplianceCheck;
 using LiveVox.NET.Models.Compliance.Requests.DialingProfiles;
+using LiveVox.NET.Models.Compliance.Requests.DialtimeDNC;
 using LiveVox.NET.Models.Compliance.Responses.ComplianceCheck;
 using LiveVox.NET.Models.Compliance.Responses.DialingProfiles;
+using LiveVox.NET.Models.Compliance.Responses.DialtimeDNC;
 using LiveVox.NET.Models.Session;
 using DayOfWeek = System.DayOfWeek;
 
@@ -103,6 +105,10 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(UpdateDialingProfileRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileAddServiceRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileRemoveServiceRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDNCRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDNCResponse))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDNCRequest))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDNCResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
