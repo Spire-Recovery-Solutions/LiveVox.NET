@@ -102,6 +102,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(UpdateDialingPolicyRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileAddServiceRequest))]
+    [JsonSerializable(typeof(UpdateDialingProfileRemoveServiceRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
