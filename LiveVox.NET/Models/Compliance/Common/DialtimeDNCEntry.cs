@@ -27,6 +27,6 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// </summary>
         [JsonPropertyName("expirationDate")]
         [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
-        public DateTimeOffset? ExpirationDate { get; set; }
+        public DateTimeOffset ExpirationDate { get; set; }
     }
 }

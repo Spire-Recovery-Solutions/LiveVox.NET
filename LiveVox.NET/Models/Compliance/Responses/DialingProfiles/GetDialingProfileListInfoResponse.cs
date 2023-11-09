@@ -24,6 +24,6 @@ namespace LiveVox.NET.Models.Compliance.Responses.DialingProfiles
         /// </summary>
         [JsonPropertyName("lastModified")]
         [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
-        public DateTimeOffset? LastModified { get; set; }
+        public DateTimeOffset LastModified { get; set; }
     }
 }
