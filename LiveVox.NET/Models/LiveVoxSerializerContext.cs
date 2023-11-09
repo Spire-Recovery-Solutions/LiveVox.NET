@@ -114,6 +114,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(SearchDialtimeDNCResponse))]
     [JsonSerializable(typeof(GetDialtimeDNCListInfoRequest))]
     [JsonSerializable(typeof(GetDialtimeDNCListInfoResponse))]
+    [JsonSerializable(typeof(ListDialtimeDNCRequest))]
+    [JsonSerializable(typeof(ListDialtimeDNCResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

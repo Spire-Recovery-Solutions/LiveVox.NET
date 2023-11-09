@@ -16,7 +16,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
-        public string? Resource { get; set; } = "dialtime/dnc/info ";
+        public string? Resource { get; set; } = "dialtime/dnc/info";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
 
