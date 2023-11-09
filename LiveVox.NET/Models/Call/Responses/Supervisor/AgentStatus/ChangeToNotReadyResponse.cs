@@ -9,12 +9,14 @@ using LiveVox.NET.Models.Call.Common.Supervisor;
 
 namespace LiveVox.NET.Models.Call.Responses.Supervisor.AgentStatus
 {
-    public class ChangeToReadyResponse : ILiveVoxResponse
+    public class ChangeToNotReadyResponse : ILiveVoxResponse
     {
         /// <summary>
-        /// An array of Agent IDs and the result of the change request
+        /// An array of Agents and the result of the logoff request
         /// </summary>
         [JsonPropertyName("agents")]
         public ICollection<AgentsChangeRequestResult> Agents { get; set; }
     }
+
+   
 }
