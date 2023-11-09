@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -35,6 +36,7 @@ namespace LiveVox.NET.Models.Account.Requests
         /// <summary>
         /// Account ID to be read.
         /// </summary>
+        [Required]
         public int AccountId { get; set; }
     }
 }
