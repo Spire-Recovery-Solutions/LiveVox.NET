@@ -33,6 +33,12 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+
+        public ListDialtimeDNCRequest(int count, int offset)
+        {
+            Offset = offset;
+            Count = count;
+        }
         /// <summary>
         /// Gets or sets the number of items to return in the list. There is a hard cap of 1000 items.
         /// </summary>

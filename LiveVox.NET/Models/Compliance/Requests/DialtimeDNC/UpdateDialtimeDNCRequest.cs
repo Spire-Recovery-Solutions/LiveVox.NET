@@ -1,39 +1,47 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Compliance.Common;
+using RestSharp;
 
 namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
 {
-    public class ReadDialtimeDNCRequest : ILiveVoxRequest
+    public class UpdateDialtimeDNCRequest : DialtimeDNCEntry, ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
         public string? Resource { get; set; } = "dialtime/dnc/{dncId}";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Get;
+        public Method RequestType { get; set; } = Method.Put;
 
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("dncId", DncId, ParameterType.UrlSegment);
 
+            // Serialize the request using the source-generated context for the specific type of 'request'
+            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
+
+            // Add the serialized request body to the RestRequest
+            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
 
-        public ReadDialtimeDNCRequest(int dncId)
+        public UpdateDialtimeDNCRequest(int dncId)
         {
-            DncId = dncId; 
+            DncId = dncId;
         }
         /// <summary>
-        /// Gets or sets the DNC entry ID to be read.
+        /// Gets or sets the Dialtime DNC entry to update.
         /// </summary>
-        [JsonPropertyName("dncId")]
+        [Required]
         public int DncId { get; set; }
     }
 }
