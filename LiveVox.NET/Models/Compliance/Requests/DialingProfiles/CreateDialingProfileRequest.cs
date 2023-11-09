@@ -32,6 +32,10 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+        public CreateDialingProfileRequest(int clientId)
+        {
+            ClientId = clientId;
+        }
         
         /// <summary>
         /// Gets or sets the ID of the Client under which the Dialing Profile will be created.

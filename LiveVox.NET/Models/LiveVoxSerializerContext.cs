@@ -95,6 +95,10 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(DeleteDialingProfileRequest))]
     [JsonSerializable(typeof(GetDialingProfileListInfoRequest))]
     [JsonSerializable(typeof(GetDialingProfileListInfoResponse))]
+    [JsonSerializable(typeof(ListDialingProfileRequest))]
+    [JsonSerializable(typeof(ListDialingProfileResponse))]
+    [JsonSerializable(typeof(ReadDialingProfileRequest))]
+    [JsonSerializable(typeof(ReadDialingProfileResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

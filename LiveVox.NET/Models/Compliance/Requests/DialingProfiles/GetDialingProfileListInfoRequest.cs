@@ -27,6 +27,10 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
             
             return Task.FromResult(request);
         }
+        public GetDialingProfileListInfoRequest(int clientId)
+        {
+            ClientId = clientId;  
+        }
         /// <summary>
         /// Gets or sets the ID of the Dialing Profile to be deleted.
         /// </summary>

@@ -28,6 +28,11 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialingProfiles
             
             return Task.FromResult(request);
         }
+        public DeleteDialingPolicyRequest(int profileId, int policyId)
+        {
+            ProfileId = profileId;
+            PolicyId = policyId;    
+        }
         /// <summary>
         /// Gets or sets the ID of the Dialing Profile to be updated.
         /// </summary>
