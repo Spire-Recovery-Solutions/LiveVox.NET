@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -12,12 +11,12 @@ using RestSharp;
 
 namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
 {
-    public class CreateEmailDNCRequest : EmailDNCEntry, ILiveVoxRequest
+    public class CreateMultipleEmailDNCRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
-        public string? Resource { get; set; } = "email/dnc";
+        public string? Resource { get; set; } = "email/dnc/bulk";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
 
@@ -32,5 +31,10 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+        /// <summary>
+        /// Gets or sets an array of Email DNC entries to create.
+        /// </summary>
+        [JsonPropertyName("dncEntries")]
+        public ICollection<EmailDNCEntry> DNCEntries { get; set; }
     }
 }
