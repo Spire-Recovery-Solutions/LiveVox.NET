@@ -140,6 +140,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(CreateSmsDncResponse))]
     [JsonSerializable(typeof(CreateMultipleSmsDncRequest))]
     [JsonSerializable(typeof(CreateMultipleSmsDncResponse))]
+    [JsonSerializable(typeof(DeleteSmsDncRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
