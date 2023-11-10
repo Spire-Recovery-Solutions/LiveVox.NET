@@ -10,31 +10,20 @@ using RestSharp;
 
 namespace LiveVox.NET.Models.Compliance.Requests.SmsDnc
 {
-    public class DeleteSmsDncRequest : ILiveVoxRequest
+    public class GetSmsDncListInfoRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
-        public string? Resource { get; set; } = "sms/dnc/{dncId}";
+        public string? Resource { get; set; } = "sms/dnc/info";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Delete;
+        public Method RequestType { get; set; } = Method.Get;
 
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
-            request.AddParameter("dncId", DncId, ParameterType.UrlSegment);
 
             return Task.FromResult(request);
         }
-
-        public DeleteSmsDncRequest(int dncId)
-        {
-            DncId = dncId;
-        }
-        /// <summary>
-        /// Gets or sets the SMS DNC entry ID to be deleted.
-        /// </summary>
-        [JsonPropertyName("dncId")]
-        public int DncId { get; set; }
     }
 }
