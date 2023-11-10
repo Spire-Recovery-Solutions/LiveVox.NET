@@ -7,9 +7,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class ListDialtimeDNCResponse : ILiveVoxResponse
+    public class ListDialtimeDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets a URI for the next page of entries. If next is not present or blank, then there are no pages after this one.
@@ -21,6 +21,6 @@ namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
         /// Gets or sets a container for a page of Dialtime DNC entries. The page size is controlled via count and offset in the request.
         /// </summary>
         [JsonPropertyName("dncEntries")]
-        public ICollection<DialtimeDNCEntry> DNCEntries { get; set; }
+        public ICollection<DialtimeDncEntry> DNCEntries { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Compliance.Common
 {
-    public class EmailDNCEntry
+    public class EmailDncEntry
     {
         /// <summary>
         /// Gets or sets the ID for the entry.

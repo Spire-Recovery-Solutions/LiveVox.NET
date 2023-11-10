@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 
-namespace LiveVox.NET.Models.Compliance.Responses.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Responses.EmailDnc
 {
-    public class ReadEmailDNCResponse : EmailDNCEntry, ILiveVoxResponse
+    public class ReadEmailDncResponse : EmailDncEntry, ILiveVoxResponse
     {
     }
 }

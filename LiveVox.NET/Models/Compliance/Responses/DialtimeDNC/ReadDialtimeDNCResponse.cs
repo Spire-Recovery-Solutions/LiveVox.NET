@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class ReadDialtimeDNCResponse : DialtimeDNCEntry, ILiveVoxResponse
+    public class ReadDialtimeDncResponse : DialtimeDncEntry, ILiveVoxResponse
     {
     }
 }

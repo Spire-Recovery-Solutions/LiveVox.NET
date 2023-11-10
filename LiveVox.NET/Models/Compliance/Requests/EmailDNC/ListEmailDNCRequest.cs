@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Requests.EmailDnc
 {
-    public class ListEmailDNCRequest : ILiveVoxRequest
+    public class ListEmailDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -30,7 +30,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
             return Task.FromResult(request);
         }
 
-        public ListEmailDNCRequest(int count, int offset)
+        public ListEmailDncRequest(int count, int offset)
         {
             Count = count;
             Offset = offset;

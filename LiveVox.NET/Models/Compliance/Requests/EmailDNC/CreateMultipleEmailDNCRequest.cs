@@ -9,9 +9,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Requests.EmailDnc
 {
-    public class CreateMultipleEmailDNCRequest : ILiveVoxRequest
+    public class CreateMultipleEmailDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -32,9 +32,9 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
             return Task.FromResult(request);
         }
         /// <summary>
-        /// Gets or sets an array of Email DNC entries to create.
+        /// Gets or sets an array of Email Dnc entries to create.
         /// </summary>
         [JsonPropertyName("dncEntries")]
-        public ICollection<EmailDNCEntry> DNCEntries { get; set; }
+        public ICollection<EmailDncEntry> DncEntries { get; set; }
     }
 }

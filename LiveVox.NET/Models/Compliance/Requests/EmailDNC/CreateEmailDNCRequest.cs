@@ -10,9 +10,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Requests.EmailDnc
 {
-    public class CreateEmailDNCRequest : EmailDNCEntry, ILiveVoxRequest
+    public class CreateEmailDncRequest : EmailDncEntry, ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";

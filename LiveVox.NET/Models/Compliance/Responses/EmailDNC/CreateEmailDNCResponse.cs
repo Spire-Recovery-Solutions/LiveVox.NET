@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Responses.EmailDnc
 {
-    public class CreateEmailDNCResponse : ILiveVoxResponse
+    public class CreateEmailDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the ID for the created email entry.

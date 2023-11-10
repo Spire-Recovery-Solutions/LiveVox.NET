@@ -9,9 +9,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class CreateMultipleDialtimeDNCRequest : ILiveVoxRequest
+    public class CreateMultipleDialtimeDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -31,9 +31,9 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             return Task.FromResult(request);
         }
         /// <summary>
-        /// Gets or sets an array of Dialtime DNC entries to create/update.
+        /// Gets or sets an array of Dialtime Dnc entries to create/update.
         /// </summary>
         [JsonPropertyName("dncEntries")]
-        public ICollection<DialtimeDNCEntry> DNCEntries { get; set; }
+        public ICollection<DialtimeDncEntry> DncEntries { get; set; }
     }
 }

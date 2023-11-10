@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Compliance.Common
 {
-    public class DialtimeDNCEntry
+    public class DialtimeDncEntry
     {
         /// <summary>
         /// Gets or sets the ID for the entry.

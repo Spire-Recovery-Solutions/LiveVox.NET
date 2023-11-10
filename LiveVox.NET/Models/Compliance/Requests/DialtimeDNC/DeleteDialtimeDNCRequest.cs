@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class DeleteDialtimeDNCRequest : ILiveVoxRequest
+    public class DeleteDialtimeDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -27,12 +27,12 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
 
             return Task.FromResult(request);
         }
-        public DeleteDialtimeDNCRequest(int dncId)
+        public DeleteDialtimeDncRequest(int dncId)
         {
             DncId = dncId;
         }
         /// <summary>
-        /// Gets or sets the dialtime DNC entry id to be deleted.
+        /// Gets or sets the dialtime Dnc entry id to be deleted.
         /// </summary>
         [Required]
         public int DncId { get; set; }

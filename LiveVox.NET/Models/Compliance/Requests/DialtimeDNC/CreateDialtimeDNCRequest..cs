@@ -11,9 +11,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class CreateDialtimeDNCRequest : DialtimeDNCEntry, ILiveVoxRequest
+    public class CreateDialtimeDncRequest : DialtimeDncEntry, ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";

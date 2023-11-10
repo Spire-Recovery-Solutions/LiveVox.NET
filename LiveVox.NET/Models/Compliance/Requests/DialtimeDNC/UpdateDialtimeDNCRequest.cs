@@ -10,9 +10,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class UpdateDialtimeDNCRequest : DialtimeDNCEntry, ILiveVoxRequest
+    public class UpdateDialtimeDncRequest : DialtimeDncEntry, ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -34,12 +34,12 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             return Task.FromResult(request);
         }
 
-        public UpdateDialtimeDNCRequest(int dncId)
+        public UpdateDialtimeDncRequest(int dncId)
         {
             DncId = dncId;
         }
         /// <summary>
-        /// Gets or sets the Dialtime DNC entry to update.
+        /// Gets or sets the Dialtime Dnc entry to update.
         /// </summary>
         [Required]
         public int DncId { get; set; }

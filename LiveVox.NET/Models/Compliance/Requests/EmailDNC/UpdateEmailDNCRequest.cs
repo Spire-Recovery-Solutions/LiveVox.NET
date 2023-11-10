@@ -10,9 +10,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Requests.EmailDnc
 {
-    public class UpdateEmailDNCRequest : EmailDNCEntry, ILiveVoxRequest
+    public class UpdateEmailDncRequest : EmailDncEntry, ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -33,13 +33,13 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
-        public UpdateEmailDNCRequest(int dncId)
+        public UpdateEmailDncRequest(int dncId)
         {
             DncId = dncId;
         }
         
         /// <summary>
-        /// Gets or sets the DNC entry ID to be read.
+        /// Gets or sets the Dnc entry ID to be read.
         /// </summary>
         [Required]
         public int DncId { get; set; }

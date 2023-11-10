@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class CreateMultipleDialtimeDNCResponse : ILiveVoxResponse
+    public class CreateMultipleDialtimeDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the number of records processed.

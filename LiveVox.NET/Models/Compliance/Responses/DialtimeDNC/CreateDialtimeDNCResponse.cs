@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class CreateDialtimeDNCResponse : ILiveVoxResponse
+    public class CreateDialtimeDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the ID for the created dialtime entry.

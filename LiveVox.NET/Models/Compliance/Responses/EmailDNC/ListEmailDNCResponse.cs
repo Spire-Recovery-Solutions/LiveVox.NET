@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 
-namespace LiveVox.NET.Models.Compliance.Responses.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Responses.EmailDnc
 {
-    public class ListEmailDNCResponse : ILiveVoxResponse
+    public class ListEmailDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the URI for the next page of entries. If not present or blank, there are no pages after this one.
@@ -24,6 +24,6 @@ namespace LiveVox.NET.Models.Compliance.Responses.EmailDNC
         /// </summary>
         [JsonPropertyName("dncEntries")]
         [Required]
-        public ICollection<EmailDNCEntry> DncEntries { get; set; }
+        public ICollection<EmailDncEntry> DncEntries { get; set; }
     }
 }

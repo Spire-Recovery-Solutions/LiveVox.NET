@@ -7,9 +7,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class ReadDialtimeDNCRequest : ILiveVoxRequest
+    public class ReadDialtimeDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -26,12 +26,12 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             return Task.FromResult(request);
         }
 
-        public ReadDialtimeDNCRequest(int dncId)
+        public ReadDialtimeDncRequest(int dncId)
         {
             DncId = dncId; 
         }
         /// <summary>
-        /// Gets or sets the DNC entry ID to be read.
+        /// Gets or sets the Dnc entry ID to be read.
         /// </summary>
         [JsonPropertyName("dncId")]
         public int DncId { get; set; }

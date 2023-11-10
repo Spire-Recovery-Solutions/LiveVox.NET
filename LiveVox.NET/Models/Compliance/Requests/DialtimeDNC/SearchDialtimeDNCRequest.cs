@@ -10,9 +10,9 @@ using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class SearchDialtimeDNCRequest : ILiveVoxRequest
+    public class SearchDialtimeDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -34,7 +34,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
-        public SearchDialtimeDNCRequest(int count, int offset)
+        public SearchDialtimeDncRequest(int count, int offset)
         {
             Count = count;
             Offset = offset;
@@ -50,10 +50,10 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
         public int Offset { get; set; }
 
         /// <summary>
-        /// Gets or sets the DNC entries to create with the following structure.
+        /// Gets or sets the Dnc entries to create with the following structure.
         /// </summary>
         [JsonPropertyName("filter")]
         [Required]
-        public DialtimeDNCEntry Filter { get; set; }
+        public DialtimeDncEntry Filter { get; set; }
     }
 }

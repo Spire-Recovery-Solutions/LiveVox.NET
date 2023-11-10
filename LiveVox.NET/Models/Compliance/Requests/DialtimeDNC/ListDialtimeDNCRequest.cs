@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class ListDialtimeDNCRequest : ILiveVoxRequest
+    public class ListDialtimeDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -34,7 +34,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
             return Task.FromResult(request);
         }
 
-        public ListDialtimeDNCRequest(int count, int offset)
+        public ListDialtimeDncRequest(int count, int offset)
         {
             Offset = offset;
             Count = count;

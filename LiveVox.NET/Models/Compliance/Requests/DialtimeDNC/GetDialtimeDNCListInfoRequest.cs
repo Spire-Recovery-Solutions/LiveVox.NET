@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Requests.DialtimeDnc
 {
-    public class GetDialtimeDNCListInfoRequest : ILiveVoxRequest
+    public class GetDialtimeDncListInfoRequest : ILiveVoxRequest
     {
         
         [JsonIgnore]

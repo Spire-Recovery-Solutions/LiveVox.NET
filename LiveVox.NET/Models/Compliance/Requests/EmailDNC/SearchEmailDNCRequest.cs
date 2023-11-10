@@ -11,9 +11,9 @@ using LiveVox.NET.Models.Compliance.Common;
 using LiveVox.NET.Models.Contact.Common.Contacts;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Requests.EmailDnc
 {
-    public class SearchEmailDNCRequest : ILiveVoxRequest
+    public class SearchEmailDncRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
@@ -37,7 +37,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
             return Task.FromResult(request);
         }
 
-        public SearchEmailDNCRequest(int count, int offset)
+        public SearchEmailDncRequest(int count, int offset)
         {
             Count = count;
             Offset = offset;
@@ -56,9 +56,9 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
         public int Count { get; set; }
         
         /// <summary>
-        /// Gets or sets an array of Email DNC entries to create.
+        /// Gets or sets an array of Email Dnc entries to create.
         /// </summary>
         [JsonPropertyName("filter")]
-        public EmailDNCEntry Filter { get; set; }
+        public EmailDncEntry Filter { get; set; }
     }
 }

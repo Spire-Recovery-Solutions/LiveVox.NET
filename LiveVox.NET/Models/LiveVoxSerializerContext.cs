@@ -16,12 +16,12 @@ using LiveVox.NET.Models.Campaign.Responses;
 using LiveVox.NET.Models.Compliance.Enumerations;
 using LiveVox.NET.Models.Compliance.Requests.ComplianceCheck;
 using LiveVox.NET.Models.Compliance.Requests.DialingProfiles;
-using LiveVox.NET.Models.Compliance.Requests.DialtimeDNC;
-using LiveVox.NET.Models.Compliance.Requests.EmailDNC;
+using LiveVox.NET.Models.Compliance.Requests.DialtimeDnc;
+using LiveVox.NET.Models.Compliance.Requests.EmailDnc;
 using LiveVox.NET.Models.Compliance.Responses.ComplianceCheck;
 using LiveVox.NET.Models.Compliance.Responses.DialingProfiles;
-using LiveVox.NET.Models.Compliance.Responses.DialtimeDNC;
-using LiveVox.NET.Models.Compliance.Responses.EmailDNC;
+using LiveVox.NET.Models.Compliance.Responses.DialtimeDnc;
+using LiveVox.NET.Models.Compliance.Responses.EmailDnc;
 using LiveVox.NET.Models.Session;
 using DayOfWeek = System.DayOfWeek;
 
@@ -107,33 +107,33 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(UpdateDialingProfileRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileAddServiceRequest))]
     [JsonSerializable(typeof(UpdateDialingProfileRemoveServiceRequest))]
-    [JsonSerializable(typeof(CreateDialtimeDNCRequest))]
-    [JsonSerializable(typeof(CreateDialtimeDNCResponse))]
-    [JsonSerializable(typeof(CreateMultipleDialtimeDNCRequest))]
-    [JsonSerializable(typeof(CreateMultipleDialtimeDNCResponse))]
-    [JsonSerializable(typeof(DeleteDialtimeDNCRequest))]
-    [JsonSerializable(typeof(SearchDialtimeDNCRequest))]
-    [JsonSerializable(typeof(SearchDialtimeDNCResponse))]
-    [JsonSerializable(typeof(GetDialtimeDNCListInfoRequest))]
-    [JsonSerializable(typeof(GetDialtimeDNCListInfoResponse))]
-    [JsonSerializable(typeof(ListDialtimeDNCRequest))]
-    [JsonSerializable(typeof(ListDialtimeDNCResponse))]
-    [JsonSerializable(typeof(ReadDialtimeDNCRequest))] 
-    [JsonSerializable(typeof(ReadDialtimeDNCResponse))]
-    [JsonSerializable(typeof(UpdateDialtimeDNCRequest))]
-    [JsonSerializable(typeof(CreateEmailDNCRequest))]
-    [JsonSerializable(typeof(CreateEmailDNCResponse))]
-    [JsonSerializable(typeof(CreateMultipleEmailDNCRequest))]
-    [JsonSerializable(typeof(CreateMultipleEmailDNCResponse))]
-    [JsonSerializable(typeof(SearchEmailDNCRequest))]
-    [JsonSerializable(typeof(SearchEmailDNCResponse))]
-    [JsonSerializable(typeof(GetEmailDNCListInfoRequest))]
-    [JsonSerializable(typeof(GetEmailDNCListInfoResponse))]
-    [JsonSerializable(typeof(ListEmailDNCRequest))]
-    [JsonSerializable(typeof(ListEmailDNCResponse))]
-    [JsonSerializable(typeof(ReadEmailDNCRequest))]
-    [JsonSerializable(typeof(ReadEmailDNCResponse))]
-    [JsonSerializable(typeof(UpdateEmailDNCRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDncResponse))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDncResponse))]
+    [JsonSerializable(typeof(DeleteDialtimeDncRequest))]
+    [JsonSerializable(typeof(SearchDialtimeDncRequest))]
+    [JsonSerializable(typeof(SearchDialtimeDncResponse))]
+    [JsonSerializable(typeof(GetDialtimeDncListInfoRequest))]
+    [JsonSerializable(typeof(GetDialtimeDncListInfoResponse))]
+    [JsonSerializable(typeof(ListDialtimeDncRequest))]
+    [JsonSerializable(typeof(ListDialtimeDncResponse))]
+    [JsonSerializable(typeof(ReadDialtimeDncRequest))] 
+    [JsonSerializable(typeof(ReadDialtimeDncResponse))]
+    [JsonSerializable(typeof(UpdateDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateEmailDncRequest))]
+    [JsonSerializable(typeof(CreateEmailDncResponse))]
+    [JsonSerializable(typeof(CreateMultipleEmailDncRequest))]
+    [JsonSerializable(typeof(CreateMultipleEmailDncResponse))]
+    [JsonSerializable(typeof(SearchEmailDncRequest))]
+    [JsonSerializable(typeof(SearchEmailDncResponse))]
+    [JsonSerializable(typeof(GetEmailDncListInfoRequest))]
+    [JsonSerializable(typeof(GetEmailDncListInfoResponse))]
+    [JsonSerializable(typeof(ListEmailDncRequest))]
+    [JsonSerializable(typeof(ListEmailDncResponse))]
+    [JsonSerializable(typeof(ReadEmailDncRequest))]
+    [JsonSerializable(typeof(ReadEmailDncResponse))]
+    [JsonSerializable(typeof(UpdateEmailDncRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

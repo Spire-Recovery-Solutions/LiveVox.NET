@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class GetDialtimeDNCListInfoResponse : ILiveVoxResponse
+    public class GetDialtimeDncListInfoResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the number of Dialtime DNC entries currently loaded for that Client.

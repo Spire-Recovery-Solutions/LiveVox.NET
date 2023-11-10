@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Compliance.Common;
 
-namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDNC
+namespace LiveVox.NET.Models.Compliance.Responses.DialtimeDnc
 {
-    public class SearchDialtimeDNCResponse : ILiveVoxResponse
+    public class SearchDialtimeDncResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets an array of Dialtime DNC entries that match the filter criteria in the request.
         /// </summary>
         [JsonPropertyName("dncEntries")]
-        public ICollection<DialtimeDNCEntry> DNCEntries { get; set; }
+        public ICollection<DialtimeDncEntry> DNCEntries { get; set; }
     }
 }

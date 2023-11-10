@@ -7,9 +7,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 
-namespace LiveVox.NET.Models.Compliance.Responses.EmailDNC
+namespace LiveVox.NET.Models.Compliance.Responses.EmailDnc
 {
-    public class GetEmailDNCListInfoResponse : ILiveVoxResponse
+    public class GetEmailDncListInfoResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the number of Email DNC entries currently loaded for that client.
