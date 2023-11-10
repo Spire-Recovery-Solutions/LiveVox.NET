@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveVox.NET.Converter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,12 @@ namespace LiveVox.NET.Models.Compliance.Common
 {
     public class EmailDNCEntry
     {
+        /// <summary>
+        /// Gets or sets the ID for the entry.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
+
         /// <summary>
         /// Gets or sets the email address for which you are creating the Email DNC entry.
         /// </summary>
@@ -25,6 +32,7 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Gets or sets the expiration date of the Email DNC entry.
         /// </summary>
         [JsonPropertyName("expirationDate")]
-        public DateTime? ExpirationDate { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ExpirationDate { get; set; }
     }
 }
