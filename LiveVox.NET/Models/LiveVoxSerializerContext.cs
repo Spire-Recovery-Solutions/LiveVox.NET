@@ -133,6 +133,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ListEmailDNCResponse))]
     [JsonSerializable(typeof(ReadEmailDNCRequest))]
     [JsonSerializable(typeof(ReadEmailDNCResponse))]
+    [JsonSerializable(typeof(UpdateEmailDNCRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

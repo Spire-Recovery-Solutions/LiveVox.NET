@@ -26,12 +26,7 @@ namespace LiveVox.NET.Models.Compliance.Requests.EmailDNC
 
             request.AddQueryParameter("count", Count.ToString());
             request.AddQueryParameter("Offset", Offset.ToString());
-           
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            request.AddJsonBody(requestBodyJson);
+            
             return Task.FromResult(request);
         }
 
