@@ -26,7 +26,7 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Gets or sets the expiration date of the SMS DNC entry. (Optional)
         /// </summary>
         [JsonPropertyName("expirationDate")]
-        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))] // Assuming you have a custom converter
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
         public DateTimeOffset? ExpirationDate { get; set; }
     }
 }
