@@ -8,12 +8,12 @@ using LiveVox.NET.Models.Base;
 
 namespace LiveVox.NET.Models.Compliance.Responses.SmsDnc
 {
-    public class CreateSmsDncResponse : ILiveVoxResponse
+    public class CreateMultipleSmsDncResponse : ILiveVoxResponse
     {
         /// <summary>
-        /// Gets or sets the ID for the created entry.
+        /// Gets or sets the number of records processed.
         /// </summary>
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
+        [JsonPropertyName("processedCount")]
+        public int ProcessedCount { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Compliance.Common
 {
-    public class SMSDncEntry
+    public class SmsDncEntry
     {
         /// <summary>
         /// Gets or sets the phone number for which you are creating the SMS DNC entry. The format is a 10-digit string.
@@ -27,6 +27,6 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// </summary>
         [JsonPropertyName("expirationDate")]
         [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
-        public DateTimeOffset? ExpirationDate { get; set; }
+        public DateTimeOffset ExpirationDate { get; set; }
     }
 }
