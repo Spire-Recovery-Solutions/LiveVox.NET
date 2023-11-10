@@ -24,11 +24,6 @@ namespace LiveVox.NET.Models.Compliance.Requests.SmsDnc
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             request.AddParameter("dncId", DncId, ParameterType.UrlSegment);
 
-            // Serialize the request using the source-generated context for the specific type of 'request'
-            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
-
-            // Add the serialized request body to the RestRequest
-            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
         /// <summary>
