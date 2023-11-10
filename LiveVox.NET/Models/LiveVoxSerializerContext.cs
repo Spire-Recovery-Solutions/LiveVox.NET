@@ -24,6 +24,8 @@ using LiveVox.NET.Models.Compliance.Responses.DialtimeDnc;
 using LiveVox.NET.Models.Compliance.Responses.EmailDnc;
 using LiveVox.NET.Models.Session;
 using DayOfWeek = System.DayOfWeek;
+using LiveVox.NET.Models.Compliance.Requests.SMSDnc;
+using LiveVox.NET.Models.Compliance.Responses.SMSDnc;
 
 namespace LiveVox.NET.Models
 {
@@ -134,6 +136,8 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadEmailDncRequest))]
     [JsonSerializable(typeof(ReadEmailDncResponse))]
     [JsonSerializable(typeof(UpdateEmailDncRequest))]
+    [JsonSerializable(typeof(CreateSMSDncRequest))]
+    [JsonSerializable(typeof(CreateSMSDncResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
