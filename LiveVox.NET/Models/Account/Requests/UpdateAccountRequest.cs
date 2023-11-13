@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Campaign.Requests
+namespace LiveVox.NET.Models.Account.Requests
 {
-    public class GetCampaignListInfoRequest : ILiveVoxRequest
+    public class UpdateAccountRequest : Common.Account, ILiveVoxRequest
     {
         [JsonIgnore]
-        public string? Category { get; set; } = "campaign";
+        public string? Category { get; set; } = "account";
         [JsonIgnore]
-        public string? Resource { get; set; } = "campaigns/info";
+        public string? Resource { get; set; } = "accounts/{id}";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Get;
-        
+        public Method RequestType { get; set; } = Method.Put;
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
+            request.AddParameter("id", AccountId, ParameterType.UrlSegment);
+
             // Serialize the request using the source-generated context for the specific type of 'request'
             var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 
@@ -29,5 +30,15 @@ namespace LiveVox.NET.Models.Campaign.Requests
             request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
+
+        public UpdateAccountRequest(int accountId)
+        {
+            AccountId = accountId;
+        }
+        
+        /// <summary>
+        /// Account ID  to be updated.
+        /// </summary>
+        public int AccountId { get; set; }
     }
 }

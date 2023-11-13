@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Campaign.Requests
+namespace LiveVox.NET.Models.Account.Requests
 {
-    public class GetCampaignListInfoRequest : ILiveVoxRequest
+    public class CreateAccountRequest : Common.Account , ILiveVoxRequest
     {
         [JsonIgnore]
-        public string? Category { get; set; } = "campaign";
+        public string? Category { get; set; } = "account";
         [JsonIgnore]
-        public string? Resource { get; set; } = "campaigns/info";
+        public string? Resource { get; set; } = "accounts";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Get;
-        
+        public Method RequestType { get; set; } = Method.Post;
+
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
