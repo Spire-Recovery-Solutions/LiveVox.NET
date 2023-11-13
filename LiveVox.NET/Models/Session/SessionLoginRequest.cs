@@ -11,6 +11,7 @@ namespace LiveVox.NET.Models.Session
         public string? Category { get; set; } = "session";
         [JsonIgnore]
         public string? Resource { get; set; } = "login";
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
 
         public Task<RestRequest> BuildRequestAsync()

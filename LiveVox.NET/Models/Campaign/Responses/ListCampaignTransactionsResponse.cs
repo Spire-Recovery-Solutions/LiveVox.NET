@@ -21,6 +21,6 @@ namespace LiveVox.NET.Models.Campaign.Responses
         /// Gets or sets a container for a page of account transaction entries.
         /// </summary>
         [JsonPropertyName("transaction")]
-        public List<AccountTransactionEntry> Transaction { get; set; }
+        public ICollection<AccountTransactionEntry> Transaction { get; set; }
     }
 }
