@@ -27,6 +27,11 @@ namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
             
             return Task.FromResult(request);
         }
+
+        public DeleteDncEntryRequest(int dncId)
+        {
+            DncId = dncId;
+        }
         /// <summary>
         /// Gets or sets the ID for the DNC entry to delete.
         /// </summary>

@@ -1,32 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
-using LiveVox.NET.Models.Compliance.Common;
+using LiveVox.NET.Models.Compliance.Enumerations;
 using RestSharp;
 
 namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
 {
-    public class SearchDncEntryRequest : ILiveVoxRequest
+    public class GetDncListInfoRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
-        public string? Resource { get; set; } = "dnc/search";
+        public string? Resource { get; set; } = "dnc/info";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Post;
+        public Method RequestType { get; set; } = Method.Get;
 
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             
             request.AddQueryParameter("client", ClientId.ToString());
-            request.AddQueryParameter("count", Count.ToString());
-            request.AddQueryParameter("Offset", Offset.ToString());
+            request.AddQueryParameter("dncType", DncType.ToString());
+            request.AddQueryParameter("service", ServiceId.ToString());
             // Serialize the request using the source-generated context for the specific type of 'request'
             var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
 
@@ -35,31 +36,26 @@ namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
             return Task.FromResult(request);
         }
 
-        public SearchDncEntryRequest(int client, int count, int offset)
+        public GetDncListInfoRequest(int client, DncEntryType dncType, int serviceId)
         {
             ClientId = client;
-            Count = count;
-            Offset = offset;
+            DncType = dncType;
+            ServiceId = serviceId;
         }
         /// <summary>
-        /// Gets or sets the Client ID to identify which Client the DNC list pertains to.
+        /// Gets or sets the Client ID that the list pertains to.
         /// </summary>
-        public int? ClientId { get; set; }
+        public int ClientId { get; set; }
 
         /// <summary>
-        /// Gets or sets the number of items to return in the list. There is a hard cap of 1000 items.
+        /// Gets or sets the type of the DNC list (DAILY or PERMANENT).
         /// </summary>
-        public int Count { get; set; }
+        [Required]
+        public DncEntryType DncType { get; set; }
 
         /// <summary>
-        /// Gets or sets the required offset for pagination. Specifies the offset from 0, based on the count, to start listing from.
+        /// Gets or sets the Service ID that restricts the list to entries specifically associated with this particular Service.
         /// </summary>
-        public int Offset { get; set; }
-
-        /// <summary>
-        /// Gets or sets the criteria for DNC search.
-        /// </summary>
-        [JsonPropertyName("type")]
-        public DncSearchCriteria Type { get; set; }
+        public int ServiceId { get; set; }
     }
 }
