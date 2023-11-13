@@ -89,7 +89,7 @@ namespace LiveVox.NET.Models.Account.Common
         /// Gets or sets the error ID.
         /// </summary>
         [JsonPropertyName("logId")]
-        public Guid LogId { get; set; }
+        public string LogId { get; set; }
 
         /// <summary>
         /// Gets or sets the error description.
