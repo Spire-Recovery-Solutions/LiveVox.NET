@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Compliance.Common
 {
@@ -21,7 +22,8 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Gets or sets the date and time after which a DNC entry must have been created or modified.
         /// </summary>
         [JsonPropertyName("modifiedAfter")]
-        public DateTime ModifiedAfter { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ModifiedAfter { get; set; }
 
         /// <summary>
         /// Gets or sets an array of Service IDs to further filter the list of matching DNC entries.
