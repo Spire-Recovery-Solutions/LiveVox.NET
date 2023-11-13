@@ -28,6 +28,6 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// If Service IDs are included in the request, only DNC entries associated with one of those Service IDs will be returned.
         /// </summary>
         [JsonPropertyName("service")]
-        public ICollection<int> Service { get; set; }
+        public List<int> Service { get; set; }
     }
 }
