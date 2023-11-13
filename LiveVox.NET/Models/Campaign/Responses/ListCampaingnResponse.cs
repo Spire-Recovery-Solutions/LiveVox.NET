@@ -21,6 +21,6 @@ namespace LiveVox.NET.Models.Campaign.Responses
         /// Gets or sets a container for a page of Campaign detail entries.
         /// </summary>
         [JsonPropertyName("campaignDetails")]
-        public List<CampaignEntry> CampaignDetails { get; set; }
+        public ICollection<CampaignEntry> CampaignDetails { get; set; }
     }
 }
