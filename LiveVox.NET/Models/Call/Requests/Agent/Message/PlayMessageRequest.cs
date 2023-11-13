@@ -2,17 +2,17 @@
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Call.Requests.Agent.PreviewDial
+namespace LiveVox.NET.Models.Call.Requests.Agent.Message
 {
-    public class PlayMessageRequest: ILiveVoxRequest
+    public class PlayMessageRequest : ILiveVoxRequest
     {
-        [JsonIgnore] 
+        [JsonIgnore]
         public string? Category { get; set; } = "callControl";
 
-        [JsonIgnore] 
+        [JsonIgnore]
         public string? Resource { get; set; } = "agent/message/play";
 
-        [JsonIgnore] 
+        [JsonIgnore]
         public Method RequestType { get; set; } = Method.Post;
 
         public Task<RestRequest> BuildRequestAsync()
