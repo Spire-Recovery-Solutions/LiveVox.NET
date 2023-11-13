@@ -14,6 +14,6 @@ namespace LiveVox.NET.Models.Compliance.Responses.DncListManagement
         /// Gets or sets the ID of the newly created DNC entry.
         /// </summary>
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int DncId { get; set; }
     }
 }
