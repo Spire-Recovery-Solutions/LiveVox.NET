@@ -31,6 +31,15 @@ namespace LiveVox.NET.Models.Compliance.Requests.ComplianceCheck
 
             return Task.FromResult(request);
         }
+
+        public IsComplianceBlockedRequest(int clientId, int serviceId, string phone, string account, string zip)
+        {
+            ClientId = clientId;
+            ServiceId = serviceId;
+            Phone = phone;
+            Account = account;
+            Zip = zip;
+        }
         /// <summary>
         /// Gets or sets the Client ID that identifies which Client the query pertains to.
         /// </summary>
