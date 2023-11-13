@@ -19,7 +19,7 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Gets or sets an array of phone numbers to block for the specified account.
         /// </summary>
         [JsonPropertyName("phones")]
-        public ICollection<PhoneEntry> Phones { get; set; }
+        public ICollection<CompliancePhoneEntry> Phones { get; set; }
 
     }
 }

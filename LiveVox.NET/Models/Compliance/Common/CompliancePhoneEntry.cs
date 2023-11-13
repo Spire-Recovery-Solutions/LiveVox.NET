@@ -9,7 +9,7 @@ using LiveVox.NET.Models.Compliance.Enumerations;
 
 namespace LiveVox.NET.Models.Compliance.Common
 {
-    public class PhoneEntry
+    public class CompliancePhoneEntry
     {
         /// <summary>
         /// Gets or sets one of the phone numbers to dial associated with the account.
