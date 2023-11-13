@@ -11,7 +11,7 @@ using LiveVox.NET.Models.Call.Enumerations.Agent;
 
 namespace LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus
 {
-    internal class ChangeToNotReadyRequest: ILiveVoxRequest
+    public class ChangeToNotReadyRequest: ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "callControl";

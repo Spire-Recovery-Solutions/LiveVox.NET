@@ -15,6 +15,6 @@ namespace LiveVox.NET.Models.Call.Responses.Agent.TransferAndConference
         /// Array of call centers
         /// </summary>
         [JsonPropertyName("callCenterList")]
-        public ICollection<CallCenter> CallCenterList { get; set; }
+        public ICollection<AgentCallCenter> CallCenterList { get; set; }
     }
 }

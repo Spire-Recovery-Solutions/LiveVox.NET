@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Call.Common.Agent
 {
-    public class CallCenter
+    public class AgentCallCenter
     {
         /// <summary>
         /// Call Center ID.

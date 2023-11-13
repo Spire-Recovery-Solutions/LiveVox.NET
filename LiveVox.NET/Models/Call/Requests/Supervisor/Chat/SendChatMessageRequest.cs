@@ -1,22 +1,18 @@
-﻿using LiveVox.NET.Models.Base;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Threading.Tasks;
+using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.Call.Common.Supervisor;
+using RestSharp;
 
-namespace LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus
+namespace LiveVox.NET.Models.Call.Requests.Supervisor.Chat
 {
-    public class LogoffAgentsRequest: ILiveVoxRequest
+    public class SendChatMessageRequest: ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "callControl";
 
         [JsonIgnore] 
-        public string? Resource { get; set; } = "supervisor/agent/status/logoff";
+        public string? Resource { get; set; } = "supervisor/chat/send";
 
         [JsonIgnore] public Method RequestType { get; set; } = Method.Post;
 
@@ -32,15 +28,16 @@ namespace LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus
         }
 
         /// <summary>
-        /// An array of Agent login IDs which needs to be changed to the 'Ready' state.
+        /// ID of the user to be sent chat.
         /// </summary>
-        [JsonPropertyName("agents")]
-        public ICollection<string> Agents { get; set; }
+        [JsonPropertyName("userLoginId")]
+        public string UserLoginId { get; set; }
 
         /// <summary>
-        /// A string containing a message to send to the Agent.
+        /// The message to be sent to the User.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
+
     }
 }

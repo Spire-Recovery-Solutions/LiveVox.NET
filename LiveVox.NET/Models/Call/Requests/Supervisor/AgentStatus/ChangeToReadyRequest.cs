@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus
 {
-    internal class ChangeToReadyRequest: ILiveVoxRequest
+    public class ChangeToReadyRequest: ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "callControl";

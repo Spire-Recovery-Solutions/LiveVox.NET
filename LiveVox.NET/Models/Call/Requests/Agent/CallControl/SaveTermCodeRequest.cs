@@ -12,7 +12,7 @@ using RestSharp;
 
 namespace LiveVox.NET.Models.Call.Requests.Agent.CallControl
 {
-    public class SaveTermCode : ILiveVoxRequest
+    public class SaveTermCodeRequest : ILiveVoxRequest
     {
         [JsonIgnore] public string? Category { get; set; } = "callControl";
 
@@ -32,7 +32,7 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.CallControl
             return Task.FromResult(request);
         }
 
-        public SaveTermCode(LineNumber lineNumber)
+        public SaveTermCodeRequest(LineNumber lineNumber)
         {
             LineNumber = lineNumber;
         }

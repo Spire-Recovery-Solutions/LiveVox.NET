@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LiveVox.NET.Models.Call.Requests.Agent.CallControl
 {
-    internal class EndCallRequest: ILiveVoxRequest
+    public class EndCallRequest: ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "callControl";

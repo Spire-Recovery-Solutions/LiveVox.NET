@@ -10,7 +10,7 @@ using LiveVox.NET.Models.Call.Enumerations;
 
 namespace LiveVox.NET.Models.Call.Responses.Routing
 {
-    public class RouteToAgentResponseResponse : ILiveVoxResponse
+    public class RouteToAgentResponse : ILiveVoxResponse
     {
         /// <summary>
         /// Gets or sets the unique routing ID.

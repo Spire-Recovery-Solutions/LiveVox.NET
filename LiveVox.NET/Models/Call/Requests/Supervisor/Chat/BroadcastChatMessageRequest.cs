@@ -6,7 +6,7 @@ using RestSharp;
 
 namespace LiveVox.NET.Models.Call.Requests.Supervisor.Chat
 {
-    internal class BroadcastChatMessageRequest: ILiveVoxRequest
+    public class BroadcastChatMessageRequest: ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "callControl";

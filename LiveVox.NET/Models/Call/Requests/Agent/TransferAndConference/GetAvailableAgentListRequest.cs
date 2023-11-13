@@ -32,6 +32,6 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.TransferAndConference
         /// Array of Call Centers in which to search for available Agents.
         /// </summary>
         [JsonPropertyName("callCenter")]
-        public ICollection<CallCenter> CallCenters { get; set; }
+        public ICollection<AgentCallCenter> CallCenters { get; set; }
     }
 }
