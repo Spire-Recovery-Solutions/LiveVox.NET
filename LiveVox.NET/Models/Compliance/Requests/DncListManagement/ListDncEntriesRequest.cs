@@ -34,6 +34,15 @@ namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
 
             return Task.FromResult(request);
         }
+
+        public ListDncEntriesRequest(int clientId, string dncType, int serviceId, int count, int offset)
+        {
+            ClientId = clientId;
+            dncType = dncType;
+            ServiceId = serviceId;
+            Count = count;
+            Offset = offset;
+        }
         /// <summary>
         /// Gets or sets the client ID that identifies which client the list pertains to.
         /// </summary>
