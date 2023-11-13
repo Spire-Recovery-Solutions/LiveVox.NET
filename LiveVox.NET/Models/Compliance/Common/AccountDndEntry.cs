@@ -21,6 +21,7 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Valid values are PERMANENT, DAILY, or NONE.
         /// </summary>
         [JsonPropertyName("block")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public DncEntryType Block { get; set; }
     }
 }

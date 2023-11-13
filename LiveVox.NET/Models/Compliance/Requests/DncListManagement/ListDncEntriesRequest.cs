@@ -35,10 +35,10 @@ namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
             return Task.FromResult(request);
         }
 
-        public ListDncEntriesRequest(int clientId, string dncType, int serviceId, int count, int offset)
+        public ListDncEntriesRequest(int clientId, DncEntryType dncType, int serviceId, int count, int offset)
         {
             ClientId = clientId;
-            dncType = dncType;
+            DncType = dncType;
             ServiceId = serviceId;
             Count = count;
             Offset = offset;

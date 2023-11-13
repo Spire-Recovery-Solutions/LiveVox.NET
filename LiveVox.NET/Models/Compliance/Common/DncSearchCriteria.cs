@@ -14,6 +14,7 @@ namespace LiveVox.NET.Models.Compliance.Common
         /// Gets or sets the type of the DNC entry (DAILY or PERMANENT).
         /// </summary>
         [JsonPropertyName("type")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public DncEntryType Type { get; set; }
 
         /// <summary>
