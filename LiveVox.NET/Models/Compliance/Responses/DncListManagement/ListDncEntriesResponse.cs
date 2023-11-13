@@ -13,6 +13,11 @@ namespace LiveVox.NET.Models.Compliance.Responses.DncListManagement
         /// <summary>
         /// Gets or sets a container for a page of DNC entries.
         /// </summary>
-        public List<DncEntry> Dnc { get; set; }
+        public ICollection<DncEntry> Dnc { get; set; }
+
+        /// <summary>
+        /// Gets or sets a URI for the next page of entries. If not present or blank, there are no pages after this one.
+        /// </summary>
+        public Uri Next { get; set; }
     }
 }
