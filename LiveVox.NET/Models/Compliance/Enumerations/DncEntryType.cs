@@ -18,6 +18,11 @@ namespace LiveVox.NET.Models.Compliance.Enumerations
         /// <summary>
         /// Indicates a permanent DNC entry type.
         /// </summary>
-        PERMANENT
+        PERMANENT,
+
+        /// <summary>
+        /// Indicates a None DNC entry type.
+        /// </summary>
+        NONE
     }
 }
