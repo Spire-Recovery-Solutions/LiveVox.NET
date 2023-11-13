@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Call.Common.Supervisor
 {
@@ -26,6 +27,7 @@ namespace LiveVox.NET.Models.Call.Common.Supervisor
         /// Gets or sets the chat timestamp.
         /// </summary>
         [JsonPropertyName("timestamp")]
-        public DateTime Timestamp { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset Timestamp { get; set; }
     }
 }

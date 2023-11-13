@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Call.Common.Agent;
 using LiveVox.NET.Models.Call.Common.SupervisorCalls;
@@ -70,6 +71,7 @@ namespace LiveVox.NET.Models.Call.Requests.SupervisorCalls
         /// If date and time is not included, then the call will be scheduled immediately. 
         /// </summary>
         [JsonPropertyName("date")]
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
         public DateTimeOffset Date { get; set; }
 
         /// <summary>

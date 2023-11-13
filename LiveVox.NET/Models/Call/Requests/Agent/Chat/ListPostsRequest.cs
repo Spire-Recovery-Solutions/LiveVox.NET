@@ -33,6 +33,7 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.Chat
         public ListPostsRequest(string id, int page)
         {
             Id = id;
+            Page = page;
         }
 
         /// <summary>

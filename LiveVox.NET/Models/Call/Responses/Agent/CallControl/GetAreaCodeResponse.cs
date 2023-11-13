@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 
 namespace LiveVox.NET.Models.Call.Responses.Agent.CallControl
@@ -14,13 +15,15 @@ namespace LiveVox.NET.Models.Call.Responses.Agent.CallControl
         /// Start time of the area code.
         /// </summary>
         [JsonPropertyName("startTime")]
-        public long StartTime { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset StartTime { get; set; }
 
         /// <summary>
         /// End time of the area code.
         /// </summary>
         [JsonPropertyName("endTime")]
-        public long EndTime { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset EndTime { get; set; }
 
         /// <summary>
         /// Time zone

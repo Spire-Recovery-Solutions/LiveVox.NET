@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Call.Common.Agent
 {
@@ -44,6 +45,7 @@ namespace LiveVox.NET.Models.Call.Common.Agent
         /// The time at which the post was sent.
         /// </summary>
         [JsonPropertyName("timestamp")]
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
         public DateTimeOffset Timestamp { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Call.Common.Agent
 {
@@ -51,6 +52,7 @@ namespace LiveVox.NET.Models.Call.Common.Agent
         /// When the last post was posted.
         /// </summary>
         [JsonPropertyName("lastPostTimestamp")]
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
         public DateTimeOffset LastPostTimestamp { get; set; }
     }
 }

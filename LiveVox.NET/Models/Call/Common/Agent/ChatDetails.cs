@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 
 namespace LiveVox.NET.Models.Call.Common.Agent
 {
@@ -19,7 +20,8 @@ namespace LiveVox.NET.Models.Call.Common.Agent
         /// Chat time.
         /// </summary>
         [JsonPropertyName("chatTime")]
-        public int ChatTime { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset ChatTime { get; set; }
 
         /// <summary>
         /// Chat user.

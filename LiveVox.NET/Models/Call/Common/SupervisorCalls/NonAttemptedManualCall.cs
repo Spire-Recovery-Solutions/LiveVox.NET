@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Call.Enumerations;
 
 namespace LiveVox.NET.Models.Call.Common.SupervisorCalls
@@ -40,6 +41,7 @@ namespace LiveVox.NET.Models.Call.Common.SupervisorCalls
         /// Gets or sets the date and time when the transaction received an error.
         /// </summary>
         [JsonPropertyName("timeOfFailure")]
-        public DateTime TimeOfFailure { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset TimeOfFailure { get; set; }
     }
 }

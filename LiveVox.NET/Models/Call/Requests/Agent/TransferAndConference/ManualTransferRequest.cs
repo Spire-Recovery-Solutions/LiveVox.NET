@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Call.Enumerations.Agent;
 using RestSharp;
@@ -54,7 +55,8 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.TransferAndConference
         /// Gets or sets the delay (in seconds) between dialing the 10-digit number and entering the extension.
         /// </summary>
         [JsonPropertyName("delayBeforeExtension")]
-        public int DelayBeforeExtension { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset DelayBeforeExtension { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the caller should be put on hold while the transfer is completed.

@@ -180,6 +180,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(SwitchServiceRequest))]
     [JsonSerializable(typeof(LaunchManualCallsRequest))]
     [JsonSerializable(typeof(ScheduleCallbackRequest))]
+    [JsonSerializable(typeof(GetAgentStatusRequest))]
     [JsonSerializable(typeof(GetAreaCodeResponse))]
     [JsonSerializable(typeof(GetScreenPopDetailsResponse))]
     [JsonSerializable(typeof(GetTermCodeResponse))]

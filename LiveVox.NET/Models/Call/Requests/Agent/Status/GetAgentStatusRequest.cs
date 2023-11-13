@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Call.Enumerations.Agent;
 using RestSharp;
@@ -37,6 +38,7 @@ namespace LiveVox.NET.Models.Call.Requests.Agent.Status
         /// <summary>
         /// Timestamp to filter the 'agentStatus' objects.
         /// </summary>
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
         public DateTimeOffset StateChangedAfter { get; set; }
     }
 }

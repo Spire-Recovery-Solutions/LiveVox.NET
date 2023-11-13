@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Call.Enumerations.Agent;
 
 namespace LiveVox.NET.Models.Call.Common.Agent
@@ -104,7 +105,8 @@ namespace LiveVox.NET.Models.Call.Common.Agent
         /// The time the Agent last changed their state.
         /// </summary>
         [JsonPropertyName("stateChangedTime")]
-        public DateTime StateChangedTime { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset StateChangedTime { get; set; }
 
         /// <summary>
         /// Holds call details

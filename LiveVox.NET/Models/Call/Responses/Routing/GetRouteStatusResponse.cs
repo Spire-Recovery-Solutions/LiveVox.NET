@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Base;
 using LiveVox.NET.Models.Call.Enumerations;
 
@@ -34,7 +35,8 @@ namespace LiveVox.NET.Models.Call.Responses.Routing
         /// Gets or sets the wait time in the queue.
         /// </summary>
         [JsonPropertyName("estimatedWaitTime")]
-        public int EstimatedWaitTime { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+        public DateTimeOffset EstimatedWaitTime { get; set; }
 
         /// <summary>
         /// Gets or sets the current position of the call in the queue.
