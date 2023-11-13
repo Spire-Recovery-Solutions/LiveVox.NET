@@ -19,12 +19,14 @@ using LiveVox.NET.Models.Compliance.Requests.DialingProfiles;
 using LiveVox.NET.Models.Compliance.Requests.DialtimeDnc;
 using LiveVox.NET.Models.Compliance.Requests.DncListManagement;
 using LiveVox.NET.Models.Compliance.Requests.EmailDnc;
+using LiveVox.NET.Models.Compliance.Requests.Recordings;
 using LiveVox.NET.Models.Compliance.Requests.SmsDnc;
 using LiveVox.NET.Models.Compliance.Responses.ComplianceCheck;
 using LiveVox.NET.Models.Compliance.Responses.DialingProfiles;
 using LiveVox.NET.Models.Compliance.Responses.DialtimeDnc;
 using LiveVox.NET.Models.Compliance.Responses.DncListManagement;
 using LiveVox.NET.Models.Compliance.Responses.EmailDnc;
+using LiveVox.NET.Models.Compliance.Responses.Recordings;
 using LiveVox.NET.Models.Session;
 using DayOfWeek = System.DayOfWeek;
 using LiveVox.NET.Models.Compliance.Responses.SmsDnc;
@@ -170,6 +172,11 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(MultiplePhoneDncResponse))]
     [JsonSerializable(typeof(ReadDncRequest))]
     [JsonSerializable(typeof(ReadDncResponse))]
+    [JsonSerializable(typeof(DeleteCallRecordingByIdRequest))]
+    [JsonSerializable(typeof(GetCallRecordingInfoRequest))]
+    [JsonSerializable(typeof(GetCallRecordingInfoResponse))]
+    [JsonSerializable(typeof(GetRecordingByIdRequest))]
+    [JsonSerializable(typeof(GetRecordingByIdResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

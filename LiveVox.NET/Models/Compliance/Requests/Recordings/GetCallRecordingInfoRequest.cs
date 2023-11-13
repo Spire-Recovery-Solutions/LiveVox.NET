@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
+namespace LiveVox.NET.Models.Compliance.Requests.Recordings
 {
-    public class ReadDncRequest : ILiveVoxRequest
+    public class GetCallRecordingInfoRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "compliance";
         [JsonIgnore]
-        public string? Resource { get; set; } = "dnc/{id}";
+        public string? Resource { get; set; } = "recording/info";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
 
@@ -24,19 +24,19 @@ namespace LiveVox.NET.Models.Compliance.Requests.DncListManagement
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
             
-            request.AddParameter("id", DncId, ParameterType.UrlSegment);
+            request.AddQueryParameter("recording", RecordingId);
 
             return Task.FromResult(request);
         }
 
-        public ReadDncRequest(int dncId)
+        public GetCallRecordingInfoRequest(string recordingId)
         {
-            DncId = dncId;
+            RecordingId = recordingId;
         }
         /// <summary>
-        /// Gets or sets the ID of the DNC entry.
+        /// Gets or sets the recording ID, a unique identifier of the call recording that you wish to delete.
         /// </summary>
         [Required]
-        public int DncId { get; set; }
+        public string RecordingId { get; set; }
     }
 }
