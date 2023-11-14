@@ -1,8 +1,10 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Account.Enumerations;
 using LiveVox.NET.Models.Account.Requests;
 using LiveVox.NET.Models.Account.Responses;
+using LiveVox.NET.Models.Call.Enumerations;
+using LiveVox.NET.Models.Call.Enumerations.Agent;
 using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.Enumerations;
 using LiveVox.NET.Models.Contact.Enumerations;
@@ -32,9 +34,33 @@ using LiveVox.NET.Models.Compliance.Responses.DncListManagement;
 using LiveVox.NET.Models.Compliance.Responses.EmailDnc;
 using LiveVox.NET.Models.Compliance.Responses.Recordings;
 using LiveVox.NET.Models.Session;
+using LiveVox.NET.Models.Call.Responses.Agent.CallControl;
+using LiveVox.NET.Models.Call.Requests.Agent.CallControl;
+using LiveVox.NET.Models.Call.Requests.Agent.Chat;
+using LiveVox.NET.Models.Call.Requests.Agent.PreviewDial;
+using LiveVox.NET.Models.Call.Requests.Agent.Status;
+using LiveVox.NET.Models.Call.Requests.Agent.TransferAndConference;
+using LiveVox.NET.Models.Call.Requests.Routing;
+using LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus;
+using LiveVox.NET.Models.Call.Requests.Supervisor.Chat;
+using LiveVox.NET.Models.Call.Requests.Supervisor.Service;
+using LiveVox.NET.Models.Call.Requests.SupervisorCalls;
+using LiveVox.NET.Models.Call.Responses.Agent.Chat;
+using LiveVox.NET.Models.Call.Responses.Agent.Message;
+using LiveVox.NET.Models.Call.Responses.Agent.Service;
+using LiveVox.NET.Models.Call.Responses.Agent.Status;
+using LiveVox.NET.Models.Call.Responses.Agent.TransferAndConference;
+using LiveVox.NET.Models.Call.Responses.Agent.Voicemail;
+using LiveVox.NET.Models.Call.Responses.Routing;
+using LiveVox.NET.Models.Call.Responses.Supervisor.AgentStatus;
+using LiveVox.NET.Models.Call.Responses.Supervisor.Chat;
+using LiveVox.NET.Models.Call.Responses.Supervisor.Monitor;
+using LiveVox.NET.Models.Call.Responses.Supervisor.Service;
+using LiveVox.NET.Models.Call.Responses.SupervisorCalls;
+using ChangeToNotReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToNotReadyRequest;
+using ChangeToReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToReadyRequest;
 using DayOfWeek = System.DayOfWeek;
 using LiveVox.NET.Models.Compliance.Responses.SmsDnc;
-
 namespace LiveVox.NET.Models
 {
     [JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase, GenerationMode = JsonSourceGenerationMode.Default)]
@@ -222,6 +248,70 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(GetCallRecordingInfoResponse))]
     [JsonSerializable(typeof(GetRecordingByIdRequest))]
     [JsonSerializable(typeof(GetRecordingByIdResponse))]
+    [JsonSerializable(typeof(GetAreaCodeResponse))]
+    [JsonSerializable(typeof(ActionType))]
+    [JsonSerializable(typeof(FeatureCode))]
+    [JsonSerializable(typeof(LineNumber))]
+    [JsonSerializable(typeof(LineState))]
+    [JsonSerializable(typeof(MessageLanguage))]
+    [JsonSerializable(typeof(ReasonCode))]
+    [JsonSerializable(typeof(ScheduleCallbackOptions))]
+    [JsonSerializable(typeof(TimeZone))]
+    [JsonSerializable(typeof(CallInQueueStatus))]
+    [JsonSerializable(typeof(ErrorCode))]
+    [JsonSerializable(typeof(ManualDialExRequest))]
+    [JsonSerializable(typeof(ManualDialRequest))]
+    [JsonSerializable(typeof(SaveTermCodeRequest))]
+    [JsonSerializable(typeof(CreateChatChannelRequest))]
+    [JsonSerializable(typeof(FindChannelRequest))]
+    [JsonSerializable(typeof(SendPostToChannelRequest))]
+    [JsonSerializable(typeof(DialPreviewDialRequest))]
+    [JsonSerializable(typeof(AgentToAgentTransferRequest))]
+    [JsonSerializable(typeof(GetAvailableAgentListRequest))]
+    [JsonSerializable(typeof(ManualTransferRequest))]
+    [JsonSerializable(typeof(PhonebookTransferRequest))]
+    [JsonSerializable(typeof(CallbackRequest))]
+    [JsonSerializable(typeof(RouteToAgentRequest))]
+    [JsonSerializable(typeof(ChangeToNotReadyRequest))]
+    [JsonSerializable(typeof(ChangeToReadyRequest))]
+    [JsonSerializable(typeof(LogoffAgentsRequest))]
+    [JsonSerializable(typeof(BroadcastChatMessageRequest))]
+    [JsonSerializable(typeof(GetChatMessageRequest))]
+    [JsonSerializable(typeof(SendChatMessageRequest))]
+    [JsonSerializable(typeof(SwitchServiceRequest))]
+    [JsonSerializable(typeof(LaunchManualCallsRequest))]
+    [JsonSerializable(typeof(ScheduleCallbackRequest))]
+    [JsonSerializable(typeof(GetAgentStatusRequest))]
+    [JsonSerializable(typeof(GetAreaCodeResponse))]
+    [JsonSerializable(typeof(GetScreenPopDetailsResponse))]
+    [JsonSerializable(typeof(GetTermCodeResponse))]
+    [JsonSerializable(typeof(CreateChatChannelResponse))]
+    [JsonSerializable(typeof(FindChannelResponse))]
+    [JsonSerializable(typeof(ListPostsResponse))]
+    [JsonSerializable(typeof(ListRecentChannelsResponse))]
+    [JsonSerializable(typeof(GetMessagesResponse))]
+    [JsonSerializable(typeof(GetAgentDesktopStatsResponse))]
+    [JsonSerializable(typeof(GetDetailsResponse))]
+    [JsonSerializable(typeof(GetServiceDetailsResponse))]
+    [JsonSerializable(typeof(GetAgentStatusResponse))]
+    [JsonSerializable(typeof(GetAvailableAgentListResponse))]
+    [JsonSerializable(typeof(GetCallCenterListResponse))]
+    [JsonSerializable(typeof(GetPhonebookDetailsExtResponse))]
+    [JsonSerializable(typeof(GetPhonebookDetailsResponse))]
+    [JsonSerializable(typeof(CheckVoicemailResponse))]
+    [JsonSerializable(typeof(GetHoldQueueStatusResponse))]
+    [JsonSerializable(typeof(GetRouteStatusResponse))]
+    [JsonSerializable(typeof(RouteToAgentResponse))]
+    [JsonSerializable(typeof(ChangeToNotReadyResponse))]
+    [JsonSerializable(typeof(ChangeToReadyResponse))]
+    [JsonSerializable(typeof(LogoffAgentsResponse))]
+    [JsonSerializable(typeof(BroadcastChatMessageResponse))]
+    [JsonSerializable(typeof(GetChatMessageResponse))]
+    [JsonSerializable(typeof(StartOrGetMonitorCallResponse))]
+    [JsonSerializable(typeof(GetServicesAllowedResponse))]
+    [JsonSerializable(typeof(SwitchServiceResponse))]
+    [JsonSerializable(typeof(GetNonAttemptedManualCallsResponse))]
+    [JsonSerializable(typeof(GetQueueStatsResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
