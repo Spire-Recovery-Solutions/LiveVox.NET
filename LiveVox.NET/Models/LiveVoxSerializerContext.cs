@@ -16,7 +16,7 @@ using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
 using LiveVox.NET.Models.Session;
-using LiveVox.NET.Models.Context.Requests;
+using LiveVox.NET.Models.Context.Requests.CallContextData;
 
 namespace LiveVox.NET.Models
 {
