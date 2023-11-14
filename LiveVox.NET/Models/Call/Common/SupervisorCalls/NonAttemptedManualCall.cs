@@ -35,6 +35,7 @@ namespace LiveVox.NET.Models.Call.Common.SupervisorCalls
         /// Gets or sets a unique error code representing various reasons for not attempting the transaction.
         /// </summary>
         [JsonPropertyName("errorCode")]
+        [JsonConverter(typeof(ErrorCodeJsonConverter))]
         public ErrorCode ErrorCode { get; set; }
 
         /// <summary>
