@@ -2,7 +2,7 @@
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Context.Requests.CallContextData
+namespace LiveVox.NET.Models.CallContextData.Requests
 {
     public class ReadContextKeyRequest : ILiveVoxRequest
     {

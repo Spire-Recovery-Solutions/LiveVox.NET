@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace LiveVox.NET.Models.Context.Common.CallContextData
+namespace LiveVox.NET.Models.CallContextData.Common
 {
     public class ContextDataEntry
     {

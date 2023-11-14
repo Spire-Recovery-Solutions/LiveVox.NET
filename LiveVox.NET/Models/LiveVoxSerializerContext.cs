@@ -56,6 +56,8 @@ using LiveVox.NET.Models.Call.Responses.Supervisor.Chat;
 using LiveVox.NET.Models.Call.Responses.Supervisor.Monitor;
 using LiveVox.NET.Models.Call.Responses.Supervisor.Service;
 using LiveVox.NET.Models.Call.Responses.SupervisorCalls;
+using LiveVox.NET.Models.CallContextData.Requests;
+using LiveVox.NET.Models.CallContextData.Responses;
 using ChangeToNotReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToNotReadyRequest;
 using ChangeToReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToReadyRequest;
 using DayOfWeek = System.DayOfWeek;
@@ -311,6 +313,9 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(SwitchServiceResponse))]
     [JsonSerializable(typeof(GetNonAttemptedManualCallsResponse))]
     [JsonSerializable(typeof(GetQueueStatsResponse))]
+    [JsonSerializable(typeof(UpdateContextDataRequest))]
+    [JsonSerializable(typeof(ReadContextDataResponse))]
+    [JsonSerializable(typeof(ReadContextKeyResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {

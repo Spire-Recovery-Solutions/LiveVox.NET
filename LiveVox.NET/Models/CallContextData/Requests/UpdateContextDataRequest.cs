@@ -1,10 +1,10 @@
-﻿using LiveVox.NET.Models.Base;
-using RestSharp;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using LiveVox.NET.Models.Context.Common.CallContextData;
+using LiveVox.NET.Models.Base;
+using LiveVox.NET.Models.CallContextData.Common;
+using RestSharp;
 
-namespace LiveVox.NET.Models.Context.Requests.CallContextData
+namespace LiveVox.NET.Models.CallContextData.Requests
 {
     public class UpdateContextDataRequest : ILiveVoxRequest
     {

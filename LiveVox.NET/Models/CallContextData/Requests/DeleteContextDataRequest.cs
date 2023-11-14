@@ -1,8 +1,8 @@
-﻿using LiveVox.NET.Models.Base;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Context.Requests.CallContextData
+namespace LiveVox.NET.Models.CallContextData.Requests
 {
     public class DeleteContextDataRequest : ILiveVoxRequest
     {
@@ -11,6 +11,7 @@ namespace LiveVox.NET.Models.Context.Requests.CallContextData
 
         [JsonIgnore]
         public string? Resource { get; set; } = "call/{session}/{txId}/{account}";
+
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Delete;
 
