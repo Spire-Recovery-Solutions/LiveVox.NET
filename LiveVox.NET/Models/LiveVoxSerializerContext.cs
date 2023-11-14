@@ -312,7 +312,6 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(GetNonAttemptedManualCallsResponse))]
     [JsonSerializable(typeof(GetQueueStatsResponse))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
-    [JsonSerializable(typeof(UpdateContextDataRequest))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
