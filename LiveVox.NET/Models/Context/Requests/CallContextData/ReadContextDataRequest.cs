@@ -2,14 +2,14 @@
 using RestSharp;
 using System.Text.Json.Serialization;
 
-namespace LiveVox.NET.Models.Context.Requests
+namespace LiveVox.NET.Models.Context.Requests.CallContextData
 {
-    public class ReadContextDataRequest :ILiveVoxRequest
+    public class ReadContextDataRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "context";
         [JsonIgnore]
-        public string? Resource { get; set; } = "call/{session}/{txId}/{account}?client={client}";
+        public string? Resource { get; set; } = "call/{session}/{txId}/{account}";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Get;
         public Task<RestRequest> BuildRequestAsync()

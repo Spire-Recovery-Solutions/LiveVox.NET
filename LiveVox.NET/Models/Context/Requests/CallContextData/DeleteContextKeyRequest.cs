@@ -2,14 +2,14 @@
 using LiveVox.NET.Models.Base;
 using RestSharp;
 
-namespace LiveVox.NET.Models.Context.Requests
+namespace LiveVox.NET.Models.Context.Requests.CallContextData
 {
     public class DeleteContextKeyRequest : ILiveVoxRequest
     {
         [JsonIgnore]
         public string? Category { get; set; } = "context";
         [JsonIgnore]
-        public string? Resource { get; set; } = "call/{session}/{txId}/{account}/{key}?client={client}";
+        public string? Resource { get; set; } = "call/{session}/{txId}/{account}/{key}";
         [JsonIgnore]
         public Method RequestType { get; set; } = Method.Delete;
 

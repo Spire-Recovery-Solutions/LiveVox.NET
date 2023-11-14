@@ -1,19 +1,19 @@
 ﻿using LiveVox.NET.Models.Base;
-using System.Text.Json.Serialization;
 using RestSharp;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using LiveVox.NET.Models.Context.Common.CallContextData;
 
-namespace LiveVox.NET.Models.Context.Requests
+namespace LiveVox.NET.Models.Context.Requests.CallContextData
 {
-    public class DeleteContextDataRequest : ILiveVoxRequest
+    public class UpdateContextDataRequest : ILiveVoxRequest
     {
-        [JsonIgnore] 
-        public string? Category { get; set; } = "context";
-
-        [JsonIgnore] 
-        public string? Resource { get; set; } = "call/{session}/{txId}/{account}?client={client}";
         [JsonIgnore]
-        public Method RequestType { get; set; } = Method.Delete;
-
+        public string? Category { get; set; } = "context";
+        [JsonIgnore]
+        public string? Resource { get; set; } = "call/{session}/{txId}/{account}";
+        [JsonIgnore]
+        public Method RequestType { get; set; } = Method.Post;
         public Task<RestRequest> BuildRequestAsync()
         {
             var request = new RestRequest(Category + "/" + Resource, RequestType);
@@ -22,11 +22,15 @@ namespace LiveVox.NET.Models.Context.Requests
             request.AddParameter("account", Account, ParameterType.UrlSegment);
             if (ClientId != null)
                 request.AddQueryParameter("client", ClientId.ToString());
-          
+
+            var requestBodyJson = JsonSerializer.Serialize(this, LiveVoxSerializerContext.Default.Options);
+
+            // Add the serialized request body to the RestRequest
+            request.AddJsonBody(requestBodyJson);
             return Task.FromResult(request);
         }
 
-        public DeleteContextDataRequest(string sessionId,int transactionId,string account,int clientId)
+        public UpdateContextDataRequest(string sessionId, int transactionId, string account, int clientId)
         {
             SessionId = sessionId;
             TransactionId = transactionId;
@@ -54,5 +58,11 @@ namespace LiveVox.NET.Models.Context.Requests
         /// </summary>
         public int? ClientId { get; set; }
 
+
+        /// <summary>
+        /// The key value pairs will be updated or added
+        /// </summary>
+        [JsonPropertyName("entry")]
+        public ICollection<ContextDataEntry> Entry { get; set; }
     }
 }
