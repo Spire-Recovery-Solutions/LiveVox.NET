@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 using LiveVox.NET.Converter;
 using LiveVox.NET.Models.Account.Enumerations;
 using LiveVox.NET.Models.Account.Requests;
@@ -7,7 +7,6 @@ using LiveVox.NET.Models.Call.Enumerations;
 using LiveVox.NET.Models.Call.Enumerations.Agent;
 using LiveVox.NET.Models.Campaign.Common;
 using LiveVox.NET.Models.Campaign.Enumerations;
-using LiveVox.NET.Models.Contact.Common.Contacts;
 using LiveVox.NET.Models.Contact.Enumerations;
 using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
 using LiveVox.NET.Models.Contact.Requests.ContactGroups;
@@ -20,6 +19,20 @@ using LiveVox.NET.Models.Contact.Responses.Contacts;
 using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
+using LiveVox.NET.Models.Compliance.Enumerations;
+using LiveVox.NET.Models.Compliance.Requests.ComplianceCheck;
+using LiveVox.NET.Models.Compliance.Requests.DialingProfiles;
+using LiveVox.NET.Models.Compliance.Requests.DialtimeDnc;
+using LiveVox.NET.Models.Compliance.Requests.DncListManagement;
+using LiveVox.NET.Models.Compliance.Requests.EmailDnc;
+using LiveVox.NET.Models.Compliance.Requests.Recordings;
+using LiveVox.NET.Models.Compliance.Requests.SmsDnc;
+using LiveVox.NET.Models.Compliance.Responses.ComplianceCheck;
+using LiveVox.NET.Models.Compliance.Responses.DialingProfiles;
+using LiveVox.NET.Models.Compliance.Responses.DialtimeDnc;
+using LiveVox.NET.Models.Compliance.Responses.DncListManagement;
+using LiveVox.NET.Models.Compliance.Responses.EmailDnc;
+using LiveVox.NET.Models.Compliance.Responses.Recordings;
 using LiveVox.NET.Models.Session;
 using LiveVox.NET.Models.Call.Responses.Agent.CallControl;
 using LiveVox.NET.Models.Call.Requests.Agent.CallControl;
@@ -46,7 +59,8 @@ using LiveVox.NET.Models.Call.Responses.Supervisor.Service;
 using LiveVox.NET.Models.Call.Responses.SupervisorCalls;
 using ChangeToNotReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToNotReadyRequest;
 using ChangeToReadyRequest = LiveVox.NET.Models.Call.Requests.Supervisor.AgentStatus.ChangeToReadyRequest;
-
+using DayOfWeek = System.DayOfWeek;
+using LiveVox.NET.Models.Compliance.Responses.SmsDnc;
 namespace LiveVox.NET.Models
 {
     [JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase, GenerationMode = JsonSourceGenerationMode.Default)]
@@ -147,6 +161,93 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(ReadCampaignResponse))]
     [JsonSerializable(typeof(UpdateCampaignRequest))]
     [JsonSerializable(typeof(UpdateCampaignStateRequest))]
+    [JsonSerializable(typeof(ZipAreaMatchType))]
+    [JsonSerializable(typeof(DayOfWeekEnum))]
+    [JsonSerializable(typeof(DncEntryType))]
+    [JsonSerializable(typeof(IsComplianceBlockedRequest))]
+    [JsonSerializable(typeof(IsComplianceBlockedResponse))]
+    [JsonSerializable(typeof(ZipAreaMatchRequest))]
+    [JsonSerializable(typeof(ZipAreaMatchResponse))]
+    [JsonSerializable(typeof(CreateDialingPolicyRequest))]
+    [JsonSerializable(typeof(CreateDialingPolicyResponse))]
+    [JsonSerializable(typeof(CreateDialingProfileRequest))]
+    [JsonSerializable(typeof(CreateDialingProfileResponse))]
+    [JsonSerializable(typeof(DeleteDialingPolicyRequest))]
+    [JsonSerializable(typeof(DeleteDialingProfileRequest))]
+    [JsonSerializable(typeof(GetDialingProfileListInfoRequest))]
+    [JsonSerializable(typeof(GetDialingProfileListInfoResponse))]
+    [JsonSerializable(typeof(ListDialingProfileRequest))]
+    [JsonSerializable(typeof(ListDialingProfileResponse))]
+    [JsonSerializable(typeof(ReadDialingProfileRequest))]
+    [JsonSerializable(typeof(ReadDialingProfileResponse))]
+    [JsonSerializable(typeof(UpdateDialingPolicyRequest))]
+    [JsonSerializable(typeof(UpdateDialingProfileRequest))]
+    [JsonSerializable(typeof(UpdateDialingProfileAddServiceRequest))]
+    [JsonSerializable(typeof(UpdateDialingProfileRemoveServiceRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateDialtimeDncResponse))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateMultipleDialtimeDncResponse))]
+    [JsonSerializable(typeof(DeleteDialtimeDncRequest))]
+    [JsonSerializable(typeof(SearchDialtimeDncRequest))]
+    [JsonSerializable(typeof(SearchDialtimeDncResponse))]
+    [JsonSerializable(typeof(GetDialtimeDncListInfoRequest))]
+    [JsonSerializable(typeof(GetDialtimeDncListInfoResponse))]
+    [JsonSerializable(typeof(ListDialtimeDncRequest))]
+    [JsonSerializable(typeof(ListDialtimeDncResponse))]
+    [JsonSerializable(typeof(ReadDialtimeDncRequest))] 
+    [JsonSerializable(typeof(ReadDialtimeDncResponse))]
+    [JsonSerializable(typeof(UpdateDialtimeDncRequest))]
+    [JsonSerializable(typeof(CreateEmailDncRequest))]
+    [JsonSerializable(typeof(CreateEmailDncResponse))]
+    [JsonSerializable(typeof(CreateMultipleEmailDncRequest))]
+    [JsonSerializable(typeof(CreateMultipleEmailDncResponse))]
+    [JsonSerializable(typeof(SearchEmailDncRequest))]
+    [JsonSerializable(typeof(SearchEmailDncResponse))]
+    [JsonSerializable(typeof(GetEmailDncListInfoRequest))]
+    [JsonSerializable(typeof(GetEmailDncListInfoResponse))]
+    [JsonSerializable(typeof(ListEmailDncRequest))]
+    [JsonSerializable(typeof(ListEmailDncResponse))]
+    [JsonSerializable(typeof(ReadEmailDncRequest))]
+    [JsonSerializable(typeof(ReadEmailDncResponse))]
+    [JsonSerializable(typeof(UpdateEmailDncRequest))]
+    [JsonSerializable(typeof(CreateSmsDncRequest))]
+    [JsonSerializable(typeof(CreateSmsDncResponse))]
+    [JsonSerializable(typeof(CreateMultipleSmsDncRequest))]
+    [JsonSerializable(typeof(CreateMultipleSmsDncResponse))]
+    [JsonSerializable(typeof(DeleteSmsDncRequest))]
+    [JsonSerializable(typeof(SearchSmsDncRequest))]
+    [JsonSerializable(typeof(SearchSmsDncResponse))]
+    [JsonSerializable(typeof(GetSmsDncListInfoRequest))]
+    [JsonSerializable(typeof(GetSmsDncListInfoResponse))]
+    [JsonSerializable(typeof(ListSmsDncRequest))]
+    [JsonSerializable(typeof(ListSmsDncResponse))]
+    [JsonSerializable(typeof(ReadSmsDncRequest))]
+    [JsonSerializable(typeof(ReadSmsDncResponse))]
+    [JsonSerializable(typeof(UpdateSmsDncRequest))]
+    [JsonSerializable(typeof(CreateDncEntryRequest))]
+    [JsonSerializable(typeof(CreateDncEntryResponse))]
+    [JsonSerializable(typeof(DeleteDncEntryRequest))]
+    [JsonSerializable(typeof(SearchDncEntryRequest))]
+    [JsonSerializable(typeof(SearchDncEntryResponse))]
+    [JsonSerializable(typeof(GetDncListInfoRequest))]
+    [JsonSerializable(typeof(GetDncListInfoResponse))]
+    [JsonSerializable(typeof(ListDncEntriesRequest))]
+    [JsonSerializable(typeof(ListDncEntriesResponse))]
+    [JsonSerializable(typeof(IsLegacyDncEnabledRequest))]
+    [JsonSerializable(typeof(IsLegacyDncEnabledResponse))]
+    [JsonSerializable(typeof(MultipleAccountDndRequest))]
+    [JsonSerializable(typeof(MultipleAccountDndResponse))]
+    [JsonSerializable(typeof(MultipleAccountPhoneDndRequest))]
+    [JsonSerializable(typeof(MultiplePhoneDncRequest))]
+    [JsonSerializable(typeof(MultiplePhoneDncResponse))]
+    [JsonSerializable(typeof(ReadDncRequest))]
+    [JsonSerializable(typeof(ReadDncResponse))]
+    [JsonSerializable(typeof(DeleteCallRecordingByIdRequest))]
+    [JsonSerializable(typeof(GetCallRecordingInfoRequest))]
+    [JsonSerializable(typeof(GetCallRecordingInfoResponse))]
+    [JsonSerializable(typeof(GetRecordingByIdRequest))]
+    [JsonSerializable(typeof(GetRecordingByIdResponse))]
     [JsonSerializable(typeof(GetAreaCodeResponse))]
     [JsonSerializable(typeof(ActionType))]
     [JsonSerializable(typeof(FeatureCode))]
