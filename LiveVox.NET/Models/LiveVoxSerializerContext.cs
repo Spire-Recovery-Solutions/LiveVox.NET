@@ -12,7 +12,6 @@ using LiveVox.NET.Models.Contact.Requests.Contact_Groups;
 using LiveVox.NET.Models.Contact.Requests.ContactGroups;
 using LiveVox.NET.Models.Contact.Requests.Contacts;
 using LiveVox.NET.Models.Contact.Requests.CustomField;
-using LiveVox.NET.Models.Contact.Responses.Contact_Groups;
 using LiveVox.NET.Models.Contact.Responses.ContactGroups;
 using LiveVox.NET.Models.Contact.Responses.ContactNotes;
 using LiveVox.NET.Models.Contact.Responses.Contacts;
