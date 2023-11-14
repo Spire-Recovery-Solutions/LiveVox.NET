@@ -16,11 +16,10 @@ namespace LiveVox.NET.Models.Contact.Responses.Contacts
         [JsonPropertyName("next")]
         public Uri NextPageUri { get; set; }
 
-        //Should be implemented once Account Model is available  
-        ///// <summary>
-        ///// A list of accounts. (The list is sorted by "name".)
-        ///// </summary>
-        //[JsonPropertyName("listAccounts")]
-        //public ICollection<Account> ListAccounts { get; set; }
+        /// <summary>
+        /// A list of accounts. (The list is sorted by "name".)
+        /// </summary>
+        [JsonPropertyName("listAccounts")]
+        public ICollection<Account.Common.Account> ListAccounts { get; set; }
     }
 }
