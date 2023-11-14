@@ -16,6 +16,7 @@ using LiveVox.NET.Models.Contact.Responses.CustomField;
 using LiveVox.NET.Models.Campaign.Requests;
 using LiveVox.NET.Models.Campaign.Responses;
 using LiveVox.NET.Models.Session;
+using LiveVox.NET.Models.Context.Requests;
 
 namespace LiveVox.NET.Models
 {
@@ -78,6 +79,7 @@ namespace LiveVox.NET.Models
     [JsonSerializable(typeof(UpdateCampaignRequest))]
     [JsonSerializable(typeof(UpdateCampaignStateRequest))]
     [JsonSerializable(typeof(DateTimeOffsetToUtcMillisecondStringConverter))]
+    [JsonSerializable(typeof(UpdateContextDataRequest))]
     public partial class LiveVoxSerializerContext : JsonSerializerContext
     {
         // The source generator will fill in the necessary code here.
