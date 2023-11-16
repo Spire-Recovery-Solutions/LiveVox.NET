@@ -33,5 +33,4 @@ namespace LiveVox.NET.Exception
             return $"LiveVoxException: {HttpStatusCode} - {ErrorBody.Code} - {ErrorBody.Message}\n{StackTrace}";
         }
     }
-    }
 }
